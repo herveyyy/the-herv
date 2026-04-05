@@ -5,17 +5,18 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { 
-  Github, 
-  Linkedin, 
-  Twitter, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  ExternalLink, 
-  Briefcase, 
-  GraduationCap, 
-  Code2, 
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Mail,
+  Phone,
+  MapPin,
+  ExternalLink,
+  Briefcase,
+  GraduationCap,
+  Code2,
   ChevronRight,
   Globe,
   Cpu,
@@ -23,7 +24,7 @@ import {
   Home,
   Sun,
   Moon,
-  FileText
+  FileText,
 } from "lucide-react";
 import { DATA } from "./constants";
 import { Chat } from "./components/Chat";
@@ -45,7 +46,7 @@ export default function App() {
     <div className="min-h-screen font-sans selection:bg-foreground selection:text-background transition-colors duration-300">
       {/* Navigation */}
       <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-        <motion.div 
+        <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className="flex items-center gap-2 px-4 py-2 bg-foreground/10 backdrop-blur-md border border-foreground/20 rounded-full shadow-2xl"
@@ -85,7 +86,7 @@ export default function App() {
         <section id="home" className="space-y-8">
           <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-8">
             <div className="space-y-4 flex-1">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: BLUR_FADE_DELAY }}
@@ -93,11 +94,11 @@ export default function App() {
               >
                 Hi, I'm {DATA.name.split(" ")[0]} 👋
               </motion.h1>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: BLUR_FADE_DELAY * 2 }}
-                className="text-xl text-zinc-500 max-w-[600px] text-balance"
+                className="text-xl text-zinc-500 max-w-150 text-balance"
               >
                 {DATA.description}
               </motion.p>
@@ -108,8 +109,8 @@ export default function App() {
               transition={{ delay: BLUR_FADE_DELAY * 2 }}
               className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-foreground/20 grayscale hover:grayscale-0 transition-all duration-500 shadow-[0_0_20px_rgba(var(--foreground),0.1)]"
             >
-              <img 
-                src={DATA.avatarUrl} 
+              <img
+                src={DATA.avatarUrl}
                 alt={DATA.name}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -117,13 +118,16 @@ export default function App() {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: BLUR_FADE_DELAY * 3 }}
             className="flex flex-wrap gap-4"
           >
-            <a href={`mailto:${DATA.contact.email}`} className="flex items-center gap-2 text-sm text-zinc-500 hover:text-foreground transition-colors">
+            <a
+              href={`mailto:${DATA.contact.email}`}
+              className="flex items-center gap-2 text-sm text-zinc-500 hover:text-foreground transition-colors"
+            >
               <Mail size={16} /> {DATA.contact.email}
             </a>
             <div className="flex items-center gap-2 text-sm text-zinc-500">
@@ -134,7 +138,7 @@ export default function App() {
 
         {/* About Section */}
         <section className="space-y-4">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -142,7 +146,7 @@ export default function App() {
           >
             About
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -154,7 +158,7 @@ export default function App() {
 
         {/* Experience Section */}
         <section id="experience" className="space-y-8">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -164,7 +168,7 @@ export default function App() {
           </motion.h2>
           <div className="space-y-12">
             {DATA.work.map((job, idx) => (
-              <motion.div 
+              <motion.div
                 key={job.company}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -181,7 +185,9 @@ export default function App() {
                     {job.start} — {job.end}
                   </span>
                 </div>
-                <p className="text-sm font-medium text-zinc-400 mb-4">{job.title}</p>
+                <p className="text-sm font-medium text-zinc-400 mb-4">
+                  {job.title}
+                </p>
                 <p className="text-sm text-zinc-500 leading-relaxed">
                   {job.description}
                 </p>
@@ -193,7 +199,7 @@ export default function App() {
         {/* Work Projects Section */}
         <section id="work-projects" className="space-y-8">
           <div className="space-y-2">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -201,7 +207,9 @@ export default function App() {
             >
               Work Projects
             </motion.h2>
-            <p className="text-zinc-500 text-sm">Professional projects developed during my employment.</p>
+            <p className="text-zinc-500 text-sm">
+              Professional projects developed during my employment.
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {DATA.projects.work.map((project, idx) => (
@@ -215,10 +223,12 @@ export default function App() {
               >
                 <div className="p-5 flex-1 flex flex-col">
                   <div className="flex flex-col gap-2 mb-4">
-                    <h3 className="font-bold text-lg leading-tight">{project.title}</h3>
+                    <h3 className="font-bold text-lg leading-tight">
+                      {project.title}
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {project.links.map((link) => (
-                        <a 
+                        <a
                           key={link.href}
                           href={link.href}
                           target="_blank"
@@ -229,7 +239,9 @@ export default function App() {
                           {link.icon === "Github" && <Github size={14} />}
                           {link.icon === "Globe" && <Globe size={14} />}
                           {link.icon === "FileText" && <FileText size={14} />}
-                          <span className="text-[10px] font-bold uppercase">{link.type}</span>
+                          <span className="text-[10px] font-bold uppercase">
+                            {link.type}
+                          </span>
                         </a>
                       ))}
                     </div>
@@ -240,7 +252,10 @@ export default function App() {
                   {project.technologies && project.technologies.length > 0 && (
                     <div className="mt-auto flex flex-wrap gap-1.5">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="px-2 py-0.5 bg-foreground/5 border border-foreground/10 rounded text-[10px] font-mono text-zinc-500">
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 bg-foreground/5 border border-foreground/10 rounded text-[10px] font-mono text-zinc-500"
+                        >
                           {tech}
                         </span>
                       ))}
@@ -255,7 +270,7 @@ export default function App() {
         {/* Personal Projects Section */}
         <section id="personal-projects" className="space-y-8">
           <div className="space-y-2">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -263,7 +278,10 @@ export default function App() {
             >
               Personal Projects
             </motion.h2>
-            <p className="text-zinc-500 text-sm">Independent work, open-source contributions, and experimental apps.</p>
+            <p className="text-zinc-500 text-sm">
+              Independent work, open-source contributions, and experimental
+              apps.
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {DATA.projects.personal.map((project, idx) => (
@@ -277,10 +295,12 @@ export default function App() {
               >
                 <div className="p-5 flex-1 flex flex-col">
                   <div className="flex flex-col gap-2 mb-4">
-                    <h3 className="font-bold text-lg leading-tight">{project.title}</h3>
+                    <h3 className="font-bold text-lg leading-tight">
+                      {project.title}
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {project.links.map((link) => (
-                        <a 
+                        <a
                           key={link.href}
                           href={link.href}
                           target="_blank"
@@ -291,7 +311,9 @@ export default function App() {
                           {link.icon === "Github" && <Github size={14} />}
                           {link.icon === "Globe" && <Globe size={14} />}
                           {link.icon === "FileText" && <FileText size={14} />}
-                          <span className="text-[10px] font-bold uppercase">{link.type}</span>
+                          <span className="text-[10px] font-bold uppercase">
+                            {link.type}
+                          </span>
                         </a>
                       ))}
                     </div>
@@ -302,7 +324,10 @@ export default function App() {
                   {project.technologies && project.technologies.length > 0 && (
                     <div className="mt-auto flex flex-wrap gap-1.5">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="px-2 py-0.5 bg-foreground/5 border border-foreground/10 rounded text-[10px] font-mono text-zinc-500">
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 bg-foreground/5 border border-foreground/10 rounded text-[10px] font-mono text-zinc-500"
+                        >
                           {tech}
                         </span>
                       ))}
@@ -316,7 +341,7 @@ export default function App() {
 
         {/* Skills Section */}
         <section id="skills" className="space-y-8">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -348,12 +373,16 @@ export default function App() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h2 className="text-4xl font-bold tracking-tighter">Get In Touch</h2>
-            <p className="text-zinc-500 max-w-[500px] mx-auto text-balance">
-              You can reach out to {DATA.name} through the following contact channels. Feel free to connect if you have any questions about his projects!
+            <h2 className="text-4xl font-bold tracking-tighter">
+              Get In Touch
+            </h2>
+            <p className="text-zinc-500 max-w-125 mx-auto text-balance">
+              You can reach out to {DATA.name} through the following contact
+              channels. Feel free to connect if you have any questions about his
+              projects!
             </p>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -367,11 +396,11 @@ export default function App() {
               >
                 {social.icon === "Github" && <Github size={24} />}
                 {social.icon === "Linkedin" && <Linkedin size={24} />}
-                {social.icon === "Twitter" && <Twitter size={24} />}
+                {social.icon === "Facebook" && <Facebook size={24} />}
               </a>
             ))}
           </motion.div>
-          <a 
+          <a
             href={`mailto:${DATA.contact.email}`}
             className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-bold rounded-full hover:opacity-80 transition-all"
           >
@@ -380,7 +409,10 @@ export default function App() {
         </section>
 
         <footer className="pt-20 pb-10 border-t border-foreground/10 text-center text-zinc-500 text-sm">
-          <p>© {new Date().getFullYear()} {DATA.name}. Built with React & Tailwind.</p>
+          <p>
+            © {new Date().getFullYear()} {DATA.name}. Built with React &
+            Tailwind.
+          </p>
         </footer>
       </main>
     </div>

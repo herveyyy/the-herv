@@ -2,9 +2,12 @@ export const DATA = {
   name: "Hervey Geralph C. Mapano",
   initials: "HM",
   location: "Cagayan de Oro City, Philippines",
-  locationLink: "https://www.google.com/maps/place/Cagayan+de+Oro,+Misamis+Oriental,+Philippines",
-  description: "Full Stack Developer specializing in high-performance web applications and automation systems.",
-  summary: "Web Developer at Wela School Systems with a strong background in R&D. I build enterprise-level architectural systems using modern stacks like Next.js, NestJS, and Frappe. Experienced in AI integration, LMS development, and peer-to-peer marketplaces.",
+  locationLink:
+    "https://www.google.com/maps/place/Cagayan+de+Oro,+Misamis+Oriental,+Philippines",
+  description:
+    "Full Stack Developer specializing in high-performance web applications and automation systems.",
+  summary:
+    "Web Developer at Wela School Systems with a strong background in R&D. I build enterprise-level architectural systems using modern stacks like Next.js, NestJS, and Frappe. Experienced in AI integration, LMS development, and peer-to-peer marketplaces.",
   avatarUrl: "https://github.com/herveyyy.png",
   skills: [
     "React",
@@ -33,7 +36,7 @@ export const DATA = {
     { href: "#skills", icon: "Cpu", label: "Skills" },
   ],
   contact: {
-    email: "mapanohervey@gmail.com",
+    email: "captainhervey@gmail.com",
     tel: "+639603295633",
     social: {
       GitHub: {
@@ -43,13 +46,13 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/herveymapano",
+        url: "https://www.linkedin.com/in/hervey-geralph-mapano-a7821b262/",
         icon: "Linkedin",
       },
       X: {
         name: "X",
-        url: "#",
-        icon: "Twitter",
+        url: "https://www.facebook.com/herbitok",
+        icon: "Facebook",
       },
     },
   },
@@ -98,7 +101,15 @@ export const DATA = {
         active: true,
         description:
           "AI-integrated LMS built on a Frappe and NestJS dual-backend architecture. Features an AI-driven Student Hub for note summarization and conversational English practice.",
-        technologies: ["Frappe", "NestJS", "Vue3", "TailwindCSS", "Amazon S3", "Gemini AI", "DrizzleORM"],
+        technologies: [
+          "Frappe",
+          "NestJS",
+          "Vue3",
+          "TailwindCSS",
+          "Amazon S3",
+          "Gemini AI",
+          "DrizzleORM",
+        ],
         links: [],
         image: "https://picsum.photos/seed/silid/800/400",
       },
@@ -109,7 +120,15 @@ export const DATA = {
         active: true,
         description:
           "Flexible peer-to-peer tutoring marketplace where educators list specialized courses and students request targeted learning sessions.",
-        technologies: ["Next.js", "TailwindCSS", "DrizzleORM", "PostgreSQL", "Paymongo", "Stripe", "Amazon S3"],
+        technologies: [
+          "Next.js",
+          "TailwindCSS",
+          "DrizzleORM",
+          "PostgreSQL",
+          "Paymongo",
+          "Stripe",
+          "Amazon S3",
+        ],
         links: [
           {
             type: "Website",
@@ -203,7 +222,8 @@ export const DATA = {
         href: "https://github.com/herveyyy/Drops",
         dates: "2023",
         active: true,
-        description: "Same idea of Meridrops but for everyone. A high-speed local file sharing solution.",
+        description:
+          "Same idea of Meridrops but for everyone. A high-speed local file sharing solution.",
         technologies: ["Next.js", "TailwindCSS", "DrizzleORM", "PostgreSQL"],
         links: [
           {
@@ -328,7 +348,13 @@ export const DATA = {
         active: true,
         description:
           "High-performance monorepo template designed for rapid full-stack development with Next.js and NestJS.",
-        technologies: ["Next.js", "NestJS", "TailwindCSS", "DrizzleORM", "Turborepo"],
+        technologies: [
+          "Next.js",
+          "NestJS",
+          "TailwindCSS",
+          "DrizzleORM",
+          "Turborepo",
+        ],
         links: [
           {
             type: "Source",
@@ -343,7 +369,8 @@ export const DATA = {
         href: "https://iamhervey.vercel.app",
         dates: "2024",
         active: true,
-        description: "Personal portfolio application showcasing projects and skills.",
+        description:
+          "Personal portfolio application showcasing projects and skills.",
         technologies: [],
         links: [
           {
