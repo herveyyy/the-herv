@@ -1,13 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { motion, AnimatePresence } from "motion/react";
-import { Send, MessageSquare, X, Loader2 } from "lucide-react";
+import { Send, MessageSquare, X, Loader2, CloudCog } from "lucide-react";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
 export function Chat() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<{ role: "user" | "model"; text: string }[]>([]);
+  const [messages, setMessages] = useState<
+    { role: "user" | "model"; text: string }[]
+  >([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -16,6 +18,7 @@ export function Chat() {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
+    console.log("Messages updated:", ai);
   }, [messages]);
 
   const handleSend = async () => {
@@ -30,7 +33,14 @@ export function Chat() {
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
         contents: [
-          { role: "user", parts: [{ text: `You are Hervey Mapano's portfolio assistant. Answer questions about his work, skills, and experience based on his portfolio. If asked something else, be polite but stay on topic. User says: ${userMessage}` }] },
+          {
+            role: "user",
+            parts: [
+              {
+                text: `You are Hervey Mapano's portfolio assistant. Answer questions about his work, skills, and experience based on his portfolio. If asked something else, be polite but stay on topic. User says: ${userMessage}`,
+              },
+            ],
+          },
         ],
       });
 
@@ -38,7 +48,13 @@ export function Chat() {
       setMessages((prev) => [...prev, { role: "model", text: modelText }]);
     } catch (error) {
       console.error("Chat Error:", error);
-      setMessages((prev) => [...prev, { role: "model", text: "Error connecting to AI. Please try again later." }]);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "model",
+          text: "Error connecting to AI. Please try again later.",
+        },
+      ]);
     } finally {
       setIsLoading(false);
     }
@@ -52,7 +68,7 @@ export function Chat() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="mb-4 w-80 sm:w-96 h-[500px] bg-background border border-foreground/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="mb-4 w-80 sm:w-96 h-125 bg-background border border-foreground/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="p-4 border-b border-foreground/10 flex items-center justify-between bg-foreground/5">
@@ -60,13 +76,19 @@ export function Chat() {
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="font-bold text-sm">AI Assistant</span>
               </div>
-              <button onClick={() => setIsOpen(false)} className="p-1 hover:bg-foreground/10 rounded-full transition-colors">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-1 hover:bg-foreground/10 rounded-full transition-colors"
+              >
                 <X size={18} />
               </button>
             </div>
 
             {/* Messages */}
-            <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide">
+            <div
+              ref={scrollRef}
+              className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide"
+            >
               {messages.length === 0 && (
                 <div className="text-center text-zinc-500 text-sm mt-10">
                   Ask me anything about Hervey's work!
@@ -123,7 +145,7 @@ export function Chat() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-foreground text-background rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all"
+        className="w-14 h-14 bg-foreground absolute right-0 text-background rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all"
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
       </button>
