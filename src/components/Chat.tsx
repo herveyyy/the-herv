@@ -61,14 +61,14 @@ export function Chat() {
   };
 
   return (
-    <div className="fixed bottom-24 right-6 z-50">
+    <div className="fixed inset-0 z-50 flex items-end justify-end sm:inset-auto sm:bottom-24 sm:right-6 sm:block">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="mb-4 w-80 sm:w-96 h-125 bg-background border border-foreground/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="h-screen w-screen bg-background border border-foreground/10 shadow-2xl flex flex-col overflow-hidden sm:mb-4 sm:h-125 sm:w-96 sm:rounded-2xl"
           >
             {/* Header */}
             <div className="p-4 border-b border-foreground/10 flex items-center justify-between bg-foreground/5">
@@ -145,7 +145,7 @@ export function Chat() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-foreground absolute right-0 text-background rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all"
+        className="absolute bottom-20 right-2 -z-50 flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 sm:bottom-0 sm:right-0"
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
       </button>
