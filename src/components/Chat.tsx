@@ -22,6 +22,28 @@ export function Chat() {
     }
   }, [messages]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const isMobileViewport = window.innerWidth < 640;
+    if (!isOpen || !isMobileViewport) return;
+
+    const { body, documentElement } = document;
+    const previousBodyOverflow = body.style.overflow;
+    const previousHtmlOverflow = documentElement.style.overflow;
+    const previousTouchAction = body.style.touchAction;
+
+    body.style.overflow = "hidden";
+    documentElement.style.overflow = "hidden";
+    body.style.touchAction = "none";
+
+    return () => {
+      body.style.overflow = previousBodyOverflow;
+      documentElement.style.overflow = previousHtmlOverflow;
+      body.style.touchAction = previousTouchAction;
+    };
+  }, [isOpen]);
+
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -62,14 +84,22 @@ export function Chat() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-end sm:inset-auto sm:bottom-24 sm:right-6 sm:block">
+    <div
+      className={`fixed z-50 ${
+        isOpen
+          ? "inset-0 sm:inset-auto sm:right-6 sm:bottom-24"
+          : "right-4 bottom-20 sm:right-6 sm:bottom-24"
+      }`}
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="chat-mobile-shell flex w-screen flex-col overflow-hidden bg-background shadow-2xl sm:mb-4 sm:h-125 sm:w-96 sm:rounded-2xl sm:border sm:border-foreground/10"
+            className={`
+              max-sm:chat-mobile-shell flex h-full w-full flex-col overflow-hidden bg-background shadow-2xl sm:h-125 sm:w-96 sm:rounded-2xl sm:border sm:border-foreground/10
+            `}
           >
             {/* Header */}
             <div className="px-safe pt-safe flex items-center justify-between border-b border-foreground/10 bg-foreground/5 px-4 pb-4">
@@ -152,7 +182,11 @@ export function Chat() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute right-4 bottom-20 -z-50 flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 sm:right-0 sm:bottom-0"
+        className={`flex h-14 w-14 absolute items-center  justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 ${
+          isOpen
+            ? "hidden sm:absolute sm:right-0 sm:bottom-0 sm:flex"
+            : "absolute right-0 bottom-0"
+        }`}
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
       </button>
