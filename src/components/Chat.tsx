@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { motion, AnimatePresence } from "motion/react";
-import { Send, MessageSquare, X, Loader2, CloudCog } from "lucide-react";
+import { Send, MessageSquare, X, Loader2 } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
@@ -18,7 +20,6 @@ export function Chat() {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-    console.log("Messages updated:", ai);
   }, [messages]);
 
   const handleSend = async () => {
@@ -68,10 +69,10 @@ export function Chat() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="h-screen w-screen bg-background border border-foreground/10 shadow-2xl flex flex-col overflow-hidden sm:mb-4 sm:h-125 sm:w-96 sm:rounded-2xl"
+            className="chat-mobile-shell flex w-screen flex-col overflow-hidden bg-background shadow-2xl sm:mb-4 sm:h-125 sm:w-96 sm:rounded-2xl sm:border sm:border-foreground/10"
           >
             {/* Header */}
-            <div className="p-4 border-b border-foreground/10 flex items-center justify-between bg-foreground/5">
+            <div className="px-safe pt-safe flex items-center justify-between border-b border-foreground/10 bg-foreground/5 px-4 pb-4">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="font-bold text-sm">AI Assistant</span>
@@ -87,7 +88,7 @@ export function Chat() {
             {/* Messages */}
             <div
               ref={scrollRef}
-              className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide"
+              className="flex-1 space-y-4 overflow-y-auto overscroll-contain px-4 py-4 scrollbar-hide"
             >
               {messages.length === 0 && (
                 <div className="text-center text-zinc-500 text-sm mt-10">
@@ -103,10 +104,16 @@ export function Chat() {
                     className={`max-w-[80%] p-3 rounded-2xl text-sm ${
                       msg.role === "user"
                         ? "bg-foreground text-background"
-                        : "bg-foreground/5 border border-foreground/10"
+                        : "bg-foreground/5 border border-foreground/10 [&_a]:underline [&_code]:rounded [&_code]:bg-foreground/10 [&_code]:px-1 [&_code]:py-0.5 [&_li]:ml-4 [&_ol]:list-decimal [&_ol]:space-y-1 [&_p]:my-0 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:bg-foreground/10 [&_pre]:p-3 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_ul]:list-disc [&_ul]:space-y-1"
                     }`}
                   >
-                    {msg.text}
+                    {msg.role === "model" ? (
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {msg.text}
+                      </ReactMarkdown>
+                    ) : (
+                      msg.text
+                    )}
                   </div>
                 </div>
               ))}
@@ -120,7 +127,7 @@ export function Chat() {
             </div>
 
             {/* Input */}
-            <div className="p-4 border-t border-foreground/10">
+            <div className="px-safe border-t border-foreground/10 px-4 pt-4 pb-safe">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -145,7 +152,7 @@ export function Chat() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute bottom-20 right-2 -z-50 flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 sm:bottom-0 sm:right-0"
+        className="absolute right-4 bottom-20 -z-50 flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 sm:right-0 sm:bottom-0"
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
       </button>
