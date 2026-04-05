@@ -182,7 +182,7 @@ export function Chat() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex h-14 w-14 absolute items-center  justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 ${
+        className={`flex h-14 w-14 absolute items-center -z-50  justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 ${
           isOpen
             ? "hidden sm:absolute sm:right-0 sm:bottom-0 sm:flex"
             : "absolute right-0 bottom-0"
