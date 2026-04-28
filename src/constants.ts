@@ -62,7 +62,7 @@ export const DATA = {
       href: "https://wela.online",
       badges: [],
       location: "Remote",
-      title: "Web Developer (R&D Department)",
+      title: "Full Stack Developer (R&D Department)",
       logoUrl: "",
       start: "Sept 2024",
       end: "Present",
