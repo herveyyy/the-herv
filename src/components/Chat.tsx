@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Send, MessageSquare, X, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { DATA } from "../constants";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
@@ -53,22 +54,80 @@ export function Chat() {
     setIsLoading(true);
 
     try {
-      const response = await ai.models.generateContent({
+      // --- Client-Side RAG & Pre-Filtering ---
+      const q = userMessage.toLowerCase();
+      const isGreeting = /^(hi|hello|hey|greetings|sup)\b/i.test(q);
+      let context = "";
+
+      // 1. Personal & Contact
+      if (q.includes("who") || q.includes("hervey") || q.includes("you") || q.includes("hire") || q.includes("contact") || q.includes("email") || q.includes("phone")) {
+        context += `Personal Info: ${DATA.name}, Location: ${DATA.location}. Description: ${DATA.summary}. Contact: ${DATA.contact.email}, ${DATA.contact.tel}\n`;
+      }
+
+      // 2. Skills & Tech
+      if (q.includes("skill") || q.includes("stack") || q.includes("tech") || q.includes("know") || DATA.skills.some(s => q.includes(s.toLowerCase()))) {
+        context += `Skills: ${DATA.skills.join(", ")}. Stack: ${JSON.stringify(DATA.stackSteps)}\n`;
+      }
+
+      // 3. Experience & Education
+      if (q.includes("work") || q.includes("experience") || q.includes("job") || q.includes("school") || q.includes("education") || DATA.work.some(w => q.includes(w.company.toLowerCase()))) {
+        context += `Work Experience: ${JSON.stringify(DATA.work)}. Education: ${JSON.stringify(DATA.education)}\n`;
+      }
+
+      // 4. Projects
+      if (q.includes("project") || q.includes("build") || q.includes("portfolio") || DATA.projects.work.some(p => q.includes(p.title.toLowerCase())) || DATA.projects.personal.some(p => q.includes(p.title.toLowerCase()))) {
+        context += `Projects: ${JSON.stringify(DATA.projects)}\n`;
+      }
+
+      // PRE-FILTER: Block irrelevant queries to save API costs
+      if (!context && !isGreeting) {
+        setMessages((prev) => [
+          ...prev,
+          { role: "model", text: "I am programmed to only discuss Hervey's engineering portfolio, skills, and experience. Please ask me about his work!" }
+        ]);
+        setIsLoading(false);
+        return;
+      }
+
+      // 5. Strict System Prompt Enforcement
+      const systemPrompt = `You are the exclusive AI assistant for Hervey Mapano's portfolio.
+CRITICAL RULES:
+1. ONLY answer questions based on the provided CONTEXT below. Do NOT use outside knowledge.
+2. If the user asks something outside the CONTEXT, politely decline and state you only answer questions about Hervey.
+3. Keep answers concise, professional, and highlight his "architectural rigor" and "engineering skills".
+4. Format your response cleanly using Markdown.
+
+CONTEXT EXTRACTED FROM PORTFOLIO:
+${context ? context : "User is just greeting. Introduce yourself as Hervey's AI assistant and ask how you can help them learn about his work."}
+
+User query: ${userMessage}`;
+
+      // Add an empty placeholder for the streaming response
+      setMessages((prev) => [...prev, { role: "model", text: "" }]);
+
+      const responseStream = await ai.models.generateContentStream({
         model: "gemini-3-flash-preview",
         contents: [
           {
             role: "user",
-            parts: [
-              {
-                text: `You are Hervey Mapano's portfolio assistant. Answer questions about his work, skills, and experience based on his portfolio. If asked something else, be polite but stay on topic. User says: ${userMessage}`,
-              },
-            ],
+            parts: [{ text: systemPrompt }],
           },
         ],
       });
 
-      const modelText = response.text || "I'm sorry, I couldn't process that.";
-      setMessages((prev) => [...prev, { role: "model", text: modelText }]);
+      for await (const chunk of responseStream) {
+        if (chunk.text) {
+          setMessages((prev) => {
+            const newMessages = [...prev];
+            const lastIndex = newMessages.length - 1;
+            newMessages[lastIndex] = {
+              ...newMessages[lastIndex],
+              text: newMessages[lastIndex].text + chunk.text,
+            };
+            return newMessages;
+          });
+        }
+      }
     } catch (error) {
       console.error("Chat Error:", error);
       setMessages((prev) => [

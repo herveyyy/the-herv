@@ -1,13 +1,12 @@
 export const DATA = {
-  name: "Hervey Geralph C. Mapano",
-  initials: "HM",
+  name: "Hi I'm Hervey 👋",
+  initials: "HG",
   location: "Cagayan de Oro City, Philippines",
   locationLink:
     "https://www.google.com/maps/place/Cagayan+de+Oro,+Misamis+Oriental,+Philippines",
-  description:
-    "Full Stack Developer specializing in high-performance web applications and automation systems.",
+  description: "Experience-Driven Engineering for Web Application Systems.",
   summary:
-    "Web Developer at Wela School Systems with a strong background in R&D. I build enterprise-level architectural systems using modern stacks like Next.js, NestJS, and Frappe. Experienced in AI integration, LMS development, and peer-to-peer marketplaces.",
+    "I help independent founders and small businesses bridge the gap between 'just a website' and a fully automated system. Specialized engineering for high-performance systems with architectural rigor.",
   avatarUrl: "https://github.com/herveyyy.png",
   skills: [
     "React",
@@ -30,13 +29,53 @@ export const DATA = {
   ],
   navbar: [
     { href: "#", icon: "Home", label: "Home" },
-    { href: "#work-projects", icon: "Briefcase", label: "Work" },
-    { href: "#personal-projects", icon: "Folder", label: "Personal" },
-    { href: "#experience", icon: "Briefcase", label: "Experience" },
-    { href: "#skills", icon: "Cpu", label: "Skills" },
+    { href: "#mindset", icon: "Brain", label: "Mindset" },
+    { href: "#stack", icon: "Cpu", label: "Stack" },
+    { href: "#projects", icon: "Folder", label: "Projects" },
+    { href: "#value", icon: "Briefcase", label: "Value" },
+  ],
+  mindset: [
+    {
+      title: "Architectural Rigor",
+      description:
+        "I don't use templates. I build systems that are clean, fast, and documented.",
+      icon: "Shield",
+    },
+    {
+      title: "Scalable Foundation",
+      description:
+        "Start small with serverless costs, but stay ready for 100k+ users.",
+      icon: "Zap",
+    },
+    {
+      title: "Direct Collaboration",
+      description:
+        "You work directly with the engineer. No middlemen, just pure logic.",
+      icon: "Users",
+    },
+  ],
+  stackSteps: [
+    {
+      step: "01",
+      title: "The Interface",
+      icon: "⚛️",
+      description: "Next.js Architecture",
+    },
+    { step: "02", title: "The Logic", icon: "⚡", description: "Bun / NestJS" },
+    {
+      step: "03",
+      title: "The Data",
+      icon: "🗄️",
+      description: "PostgreSQL / Drizzle",
+    },
+  ],
+  valueMetrics: [
+    { label: "System Uptime", value: "99.9%" },
+    { label: "Cost Efficiency", value: "Zero-Idle" },
+    { label: "Performance", value: "Lighthouse 100" },
   ],
   contact: {
-    email: "captainhervey@gmail.com",
+    email: "mapano.herveygeralph@gmail.com",
     tel: "+639603295633",
     social: {
       GitHub: {
@@ -151,6 +190,33 @@ export const DATA = {
       },
     ],
     personal: [
+      {
+        title: "Ylern",
+        href: "ylern.vercel.app",
+        dates: "2026",
+        active: true,
+        description:
+          "Enterprise-grade AI study companion. Seamlessly syncs with Google Classroom to generate intelligent study guides and automate academic workflows—powered by a custom credit-based system.",
+        technologies: [
+          "Next.js",
+          "TailwindCSS",
+          "DrizzleORM",
+          "PostgreSQL",
+          "Paymongo",
+          "Stripe",
+          "Amazon S3",
+          "Gemini AI",
+        ],
+        links: [
+          {
+            type: "Website",
+            href: "https://ylern.vercel.app",
+            icon: "Globe",
+          },
+        ],
+        image:
+          "C:/Users/hmapa/.gemini/antigravity/brain/1250a71d-7474-43e6-a6c9-44741fcf9473/ylern_ui_mockup_1778763344331.png",
+      },
       {
         title: "Emanuscript",
         href: "https://userapp-caps.vercel.app/",
