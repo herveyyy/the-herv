@@ -215,8 +215,15 @@ export const DATA = {
           "Manual RAG",
           "OpenAI",
           "Gemini",
+          "Cursor SDK",
         ],
-        links: [],
+        links: [
+          {
+            type: "Website",
+            href: "https://staging-giya-ai.wela.dev/",
+            icon: "Globe",
+          },
+        ],
         image: "https://picsum.photos/seed/giya/800/400",
       },
       {
@@ -416,6 +423,30 @@ export const DATA = {
         ],
         image: "https://picsum.photos/seed/gmeet/800/400",
       },
+      {
+        title: "RND Next.js Template",
+        href: "https://github.com/herveyyy/BBAI",
+        dates: "2026",
+        active: true,
+        description:
+          "Next.js 16 R&D template with domain-driven use cases, inline AAA in server actions, Drizzle + MySQL, Better Auth, and installable PWA demos.",
+        technologies: [
+          "Next.js",
+          "React 19",
+          "Drizzle ORM",
+          "MySQL",
+          "Better Auth",
+          "PWA",
+        ],
+        links: [
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/BBAI",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/bbai/800/400",
+      },
     ],
     personal: [
       {
@@ -502,30 +533,6 @@ export const DATA = {
           },
         ],
         image: "https://picsum.photos/seed/syncgclass/800/400",
-      },
-      {
-        title: "RND Next.js Template",
-        href: "https://github.com/herveyyy/BBAI",
-        dates: "2026",
-        active: true,
-        description:
-          "Next.js 16 R&D template with domain-driven use cases, inline AAA in server actions, Drizzle + MySQL, Better Auth, and installable PWA demos.",
-        technologies: [
-          "Next.js",
-          "React 19",
-          "Drizzle ORM",
-          "MySQL",
-          "Better Auth",
-          "PWA",
-        ],
-        links: [
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/BBAI",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/bbai/800/400",
       },
       {
         title: "Outreach Skill",
