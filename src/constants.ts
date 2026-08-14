@@ -441,7 +441,7 @@ export const DATA = {
         links: [
           {
             type: "Source",
-            href: "https://github.com/herveyyy/BBAI",
+            href: "https://github.com/wela-herveyyy/RND-NEXT-JS-TEMPLETE",
             icon: "Github",
           },
         ],
