@@ -101,8 +101,8 @@ export const DATA = {
         url: "https://www.linkedin.com/in/hervey-geralph-mapano-a7821b262/",
         icon: "Linkedin",
       },
-      X: {
-        name: "X",
+      Facebook: {
+        name: "Facebook",
         url: "https://www.facebook.com/herbitok",
         icon: "Facebook",
       },
@@ -425,7 +425,7 @@ export const DATA = {
       },
       {
         title: "RND Next.js Template",
-        href: "https://github.com/herveyyy/BBAI",
+        href: "https://github.com/wela-herveyyy/RND-NEXT-JS-TEMPLETE",
         dates: "2026",
         active: true,
         description:
