@@ -111,15 +111,15 @@ export const DATA = {
   work: [
     {
       company: "Livro Systems Inc.",
-      href: "#",
+      href: "https://livro.systems/",
       badges: [],
-      location: "Remote",
+      location: "Hybrid",
       title: "Full Stack Developer",
       logoUrl: "",
       start: "Feb 2025",
       end: "Present",
       description:
-        "Architect and maintain high-quality, scalable codebases. Deliver complex features, QA, and production optimizations while collaborating with cross-functional teams. Build internal AI tools and MCP integrations for developer experience.",
+        "Architect and maintain high-quality, scalable codebases while delivering complex features and bug fixes. Perform thorough testing to keep systems stable, resolve defects, and optimize production performance. Collaborate with cross-functional teams to turn requirements into solutions, and keep clear technical documentation while adopting modern tools and frameworks.",
     },
     {
       company: "Wela School Systems",
@@ -131,19 +131,19 @@ export const DATA = {
       start: "Sept 2024",
       end: "Feb 2025",
       description:
-        "Wrote well-designed, testable, efficient code. Integrated back-end services and databases. Gathered requirements, maintained documentation, and scaled AI-integrated educational platforms.",
+        "Wrote well-designed, testable, efficient code using best practices. Integrated data from back-end services and databases, refined specs from technical needs, maintained documentation, and scaled the platform while applying emerging technologies to operations.",
     },
     {
       company: "DENR Region-X",
       href: "#",
       badges: [],
       location: "Cagayan de Oro",
-      title: "IT Technician & Web Developer (OJT)",
+      title: "On The Job Trainee — IT Technician & Web Developer",
       logoUrl: "",
       start: "Feb 2024",
       end: "June 2024",
       description:
-        "Hands-on experience as an IT technician, network analyst, and web developer—troubleshooting IT issues, analyzing network performance, and contributing to web-based solutions.",
+        "Hands-on experience as an IT technician, network analyst, and web developer—troubleshooting IT issues, analyzing network performance, and contributing to web-based solutions across diverse technical domains.",
     },
   ],
   education: [
@@ -286,8 +286,167 @@ export const DATA = {
         links: [],
         image: "https://picsum.photos/seed/scheduler/800/400",
       },
+      {
+        title: "Giya Extension",
+        href: "https://github.com/herveyyy/qa-helper",
+        dates: "2026",
+        active: true,
+        description:
+          "Chrome extension (Giya QA helper) for pinning UI feedback to Livro Sprint Backlogs on allowed QA sites. Connects to ERP, creates SPBs, and restores page pins across reloads.",
+        technologies: ["TypeScript", "Bun", "Chrome Extension", "Manifest V3"],
+        links: [
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/qa-helper",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/giyaext/800/400",
+      },
+      {
+        title: "Silid LMS Manager",
+        href: "https://ai-silid-manager.vercel.app",
+        dates: "2026",
+        active: true,
+        description:
+          "Admin dashboard for Silid LMS schools—campus/section/class tenancy, storage, and Silid-AI tooling with secure staff access.",
+        technologies: [
+          "Next.js",
+          "Drizzle ORM",
+          "MySQL",
+          "PostgreSQL",
+          "NextAuth",
+          "TailwindCSS",
+        ],
+        links: [
+          {
+            type: "Website",
+            href: "https://ai-silid-manager.vercel.app",
+            icon: "Globe",
+          },
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/ai-silid-manager",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/silidmgr/800/400",
+      },
+      {
+        title: "Silid Quickies",
+        href: "https://github.com/herveyyy/Qwicha-extension-app",
+        dates: "2025",
+        active: true,
+        description:
+          "Chrome side-panel student portal for Silid LMS—quick class cards, activities, cookie-based auth, and one-click redirects into the full LMS.",
+        technologies: [
+          "React",
+          "TypeScript",
+          "Vite",
+          "TailwindCSS",
+          "Chrome Extension",
+        ],
+        links: [
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/Qwicha-extension-app",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/quickies/800/400",
+      },
+      {
+        title: "IMSCC Quiz Parser",
+        href: "https://imscc-quiz-parser.vercel.app",
+        dates: "2025",
+        active: true,
+        description:
+          "Upload an `.imscc` package and parse all quizzes into structured JSON for LMS import workflows.",
+        technologies: ["Node.js", "Express", "xml2js", "Vercel"],
+        links: [
+          {
+            type: "Website",
+            href: "https://imscc-quiz-parser.vercel.app",
+            icon: "Globe",
+          },
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/IMSCC-QUIZ-PARSER",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/imscc/800/400",
+      },
+      {
+        title: "Quiz Maker Extension",
+        href: "https://github.com/herveyyy/quiz-maker-extension-app",
+        dates: "2025",
+        active: true,
+        description:
+          "Browser extension for building quizzes quickly—React + TypeScript + Vite with React Compiler.",
+        technologies: ["React", "TypeScript", "Vite", "Chrome Extension"],
+        links: [
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/quiz-maker-extension-app",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/quizmaker/800/400",
+      },
+      {
+        title: "Google Meet Addon",
+        href: "https://project-addon-google-meet.vercel.app",
+        dates: "2025",
+        active: true,
+        description:
+          "Google Meet add-on project for classroom/meeting workflows, built with Next.js.",
+        technologies: ["Next.js", "TypeScript", "TailwindCSS"],
+        links: [
+          {
+            type: "Website",
+            href: "https://project-addon-google-meet.vercel.app",
+            icon: "Globe",
+          },
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/project-addon-google-meet",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/gmeet/800/400",
+      },
     ],
     personal: [
+      {
+        title: "Dalia ERP",
+        href: "https://dalia-docs.vercel.app",
+        dates: "2026",
+        active: true,
+        description:
+          "ERP operating system for accounting firms—multi-workspace hub, Philippines HRIS & statutory payroll (SSS, PhilHealth, BIR), with finance and ops modules on a Turborepo multi-zone Next.js stack.",
+        technologies: [
+          "Next.js",
+          "Turborepo",
+          "Drizzle ORM",
+          "Neon Postgres",
+          "Better Auth",
+          "shadcn/ui",
+        ],
+        links: [
+          {
+            type: "Website",
+            href: "https://dalia-docs.vercel.app",
+            icon: "Globe",
+          },
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/Dalia",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/dalia/800/400",
+      },
       {
         title: "Ylern",
         href: "https://ylern.vercel.app",
@@ -314,6 +473,76 @@ export const DATA = {
         ],
         image:
           "C:/Users/hmapa/.gemini/antigravity/brain/1250a71d-7474-43e6-a6c9-44741fcf9473/ylern_ui_mockup_1778763344331.png",
+      },
+      {
+        title: "Sync GClass",
+        href: "https://sync-gclass.vercel.app",
+        dates: "2026",
+        active: true,
+        description:
+          "Google Classroom sync app—Next.js + Classroom API with Drizzle/Neon persistence and NextAuth.",
+        technologies: [
+          "Next.js",
+          "Google Classroom API",
+          "Drizzle ORM",
+          "Neon",
+          "NextAuth",
+          "TailwindCSS",
+        ],
+        links: [
+          {
+            type: "Website",
+            href: "https://sync-gclass.vercel.app",
+            icon: "Globe",
+          },
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/Sync-Gclass",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/syncgclass/800/400",
+      },
+      {
+        title: "RND Next.js Template",
+        href: "https://github.com/herveyyy/BBAI",
+        dates: "2026",
+        active: true,
+        description:
+          "Next.js 16 R&D template with domain-driven use cases, inline AAA in server actions, Drizzle + MySQL, Better Auth, and installable PWA demos.",
+        technologies: [
+          "Next.js",
+          "React 19",
+          "Drizzle ORM",
+          "MySQL",
+          "Better Auth",
+          "PWA",
+        ],
+        links: [
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/BBAI",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/bbai/800/400",
+      },
+      {
+        title: "Outreach Skill",
+        href: "https://github.com/herveyyy/outreach-skill",
+        dates: "2026",
+        active: true,
+        description:
+          "CLI skill to profile prospects, pull Stitch designs, and draft outreach proposal emails.",
+        technologies: ["Node.js", "CLI", "Stitch"],
+        links: [
+          {
+            type: "Source",
+            href: "https://github.com/herveyyy/outreach-skill",
+            icon: "Github",
+          },
+        ],
+        image: "https://picsum.photos/seed/outreach/800/400",
       },
       {
         title: "Emanuscript",
