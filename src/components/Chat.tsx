@@ -69,9 +69,9 @@ export function Chat() {
         context += `Skills: ${DATA.skills.join(", ")}. Stack: ${JSON.stringify(DATA.stackSteps)}\n`;
       }
 
-      // 3. Experience & Education
-      if (q.includes("work") || q.includes("experience") || q.includes("job") || q.includes("school") || q.includes("education") || DATA.work.some(w => q.includes(w.company.toLowerCase()))) {
-        context += `Work Experience: ${JSON.stringify(DATA.work)}. Education: ${JSON.stringify(DATA.education)}\n`;
+      // 3. Experience, Education & Certifications
+      if (q.includes("work") || q.includes("experience") || q.includes("job") || q.includes("school") || q.includes("education") || q.includes("certif") || DATA.work.some(w => q.includes(w.company.toLowerCase()))) {
+        context += `Work Experience: ${JSON.stringify(DATA.work)}. Education: ${JSON.stringify(DATA.education)}. Certifications: ${JSON.stringify(DATA.certifications)}\n`;
       }
 
       // 4. Projects

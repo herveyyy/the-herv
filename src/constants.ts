@@ -131,6 +131,43 @@ export const DATA = {
       end: "2024",
     },
   ],
+  certifications: [
+    {
+      title: "Relational Database (v8)",
+      issuer: "freeCodeCamp",
+      href: "https://www.freecodecamp.org/certification/herbitok/relational-database-v8",
+    },
+    {
+      title: "Front End Development Libraries (v9)",
+      issuer: "freeCodeCamp",
+      href: "https://www.freecodecamp.org/certification/herbitok/front-end-development-libraries-v9",
+    },
+    {
+      title: "Scientific Computing with Python (v9)",
+      issuer: "freeCodeCamp",
+      href: "https://www.freecodecamp.org/certification/herbitok/python-v9",
+    },
+    {
+      title: "JavaScript Algorithms and Data Structures (v9)",
+      issuer: "freeCodeCamp",
+      href: "https://www.freecodecamp.org/certification/herbitok/javascript-v9",
+    },
+    {
+      title: "Responsive Web Design (v9)",
+      issuer: "freeCodeCamp",
+      href: "https://www.freecodecamp.org/certification/herbitok/responsive-web-design-v9",
+    },
+    {
+      title: "Virtualbadge.io Credential",
+      issuer: "Virtualbadge.io",
+      href: "https://www.virtualbadge.io/certificate-validator?credential=2d1fe79c-6113-4b2c-8478-e685a9481806",
+    },
+    {
+      title: "Responsive Web Design",
+      issuer: "freeCodeCamp",
+      href: "https://www.freecodecamp.org/certification/herveyyy/responsive-web-design",
+    },
+  ],
   projects: {
     work: [
       {
