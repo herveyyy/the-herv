@@ -5,6 +5,7 @@ import { ProjectsGrid } from "../organisms/ProjectsGrid";
 import { ValueMetrics } from "../organisms/ValueMetrics";
 import { StackComparison } from "../organisms/StackComparison";
 import { Experience } from "../organisms/Experience";
+import { Skills } from "../organisms/Skills";
 import { Contact } from "../organisms/Contact";
 
 export function HomePage() {
@@ -16,6 +17,7 @@ export function HomePage() {
       <StackComparison />
       <ProjectsGrid />
       <Experience />
+      <Skills />
       <ValueMetrics />
       <Contact />
     </>

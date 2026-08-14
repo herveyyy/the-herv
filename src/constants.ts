@@ -4,28 +4,41 @@ export const DATA = {
   location: "Cagayan de Oro City, Philippines",
   locationLink:
     "https://www.google.com/maps/place/Cagayan+de+Oro,+Misamis+Oriental,+Philippines",
-  description: "Experience-Driven Engineering for Web Application Systems.",
+  description: "Full Stack Developer — LMS, SMS & AI-integrated systems.",
   summary:
-    "I help independent founders and small businesses bridge the gap between 'just a website' and a fully automated system. Specialized engineering for high-performance systems with architectural rigor.",
+    "Innovative Full Stack Developer with 4+ years of software engineering experience and 2+ years of professional experience, specializing in architecting enterprise-grade LMS and SMS solutions. Expert in building AI-integrated systems using Next.js, NestJS, and Frappe, with a focus on RAG-based implementations and custom integration tools.",
   avatarUrl: "https://github.com/herveyyy.png",
   skills: [
     "React",
     "Next.js",
-    "Node.js",
-    "TypeScript",
-    "JavaScript",
-    "TailwindCSS",
-    "Frappe v15",
+    "Vite",
     "NestJS",
     "Vue 3",
+    "Node.js",
+    "Bun",
+    "TypeScript",
+    "JavaScript",
+    "Java",
+    "TailwindCSS",
+    "Frappe v15",
+    "ERPNext",
     "Drizzle ORM",
     "PostgreSQL",
+    "MySQL",
     "SQLite",
     "Firebase",
-    "Git",
-    "Docker",
+    "Auth.js",
+    "REST API",
+    "Zod",
     "Amazon S3",
-    "Gemini AI",
+    "RAG",
+    "OpenAI SDK",
+    "Gemini SDK",
+    "Claude SDK",
+    "Cursor SDK",
+    "Custom MCPs",
+    "Git",
+    "Figma",
   ],
   navbar: [
     { href: "#", icon: "Home", label: "Home" },
@@ -97,16 +110,28 @@ export const DATA = {
   },
   work: [
     {
+      company: "Livro Systems Inc.",
+      href: "#",
+      badges: [],
+      location: "Remote",
+      title: "Full Stack Developer",
+      logoUrl: "",
+      start: "Feb 2025",
+      end: "Present",
+      description:
+        "Architect and maintain high-quality, scalable codebases. Deliver complex features, QA, and production optimizations while collaborating with cross-functional teams. Build internal AI tools and MCP integrations for developer experience.",
+    },
+    {
       company: "Wela School Systems",
       href: "https://wela.online",
       badges: [],
       location: "Remote",
-      title: "Full Stack Developer (R&D Department)",
+      title: "Web Developer (R&D Department)",
       logoUrl: "",
       start: "Sept 2024",
-      end: "Present",
+      end: "Feb 2025",
       description:
-        "Developing well-designed, testable, and efficient code. Integrating back-end services and databases. Maintaining and scaling AI-integrated educational platforms.",
+        "Wrote well-designed, testable, efficient code. Integrated back-end services and databases. Gathered requirements, maintained documentation, and scaled AI-integrated educational platforms.",
     },
     {
       company: "DENR Region-X",
@@ -118,7 +143,7 @@ export const DATA = {
       start: "Feb 2024",
       end: "June 2024",
       description:
-        "Troubleshooting IT issues, analyzing network performance, and contributing to web-based solutions.",
+        "Hands-on experience as an IT technician, network analyst, and web developer—troubleshooting IT issues, analyzing network performance, and contributing to web-based solutions.",
     },
   ],
   education: [
@@ -128,7 +153,11 @@ export const DATA = {
       degree: "Bachelor of Science in Information Technology",
       logoUrl: "",
       start: "2020",
-      end: "2024",
+      end: "July 2024",
+      achievements: [
+        "Excellence in Research Award",
+        "Presented capstone research at the Assessment Summit hosted by Northern Bukidnon State College",
+      ],
     },
   ],
   certifications: [
@@ -171,12 +200,43 @@ export const DATA = {
   projects: {
     work: [
       {
+        title: "Giya AI",
+        href: "#",
+        dates: "2025",
+        active: true,
+        description:
+          "Livro's internal assistant for tasks, bugs, and school setups—scoped to data your account already has access to. Features RAG, chatbox, chat history, and admin controls.",
+        technologies: [
+          "Next.js",
+          "TailwindCSS",
+          "Drizzle ORM",
+          "MySQL",
+          "Auth.js",
+          "Manual RAG",
+          "OpenAI",
+          "Gemini",
+        ],
+        links: [],
+        image: "https://picsum.photos/seed/giya/800/400",
+      },
+      {
+        title: "ERPNext MCP Server",
+        href: "#",
+        dates: "2025",
+        active: true,
+        description:
+          "Livro's internal MCP for Giya AI and developer experience—bridging Frappe/ERPNext APIs into the Model Context Protocol.",
+        technologies: ["Node.js", "TypeScript", "MCP", "Frappe APIs"],
+        links: [],
+        image: "https://picsum.photos/seed/erpmcp/800/400",
+      },
+      {
         title: "Silidv3 LMS",
         href: "#",
         dates: "2024",
         active: true,
         description:
-          "AI-integrated LMS built on a Frappe and NestJS dual-backend architecture. Features an AI-driven Student Hub for note summarization and conversational English practice.",
+          "AI-integrated LMS on a Frappe and NestJS dual-backend. AI Student Hub for note summarization and conversational English practice, plus teacher tools for lesson planning and quiz generation. Includes Silid Fleet for school-wide AI token and storage monitoring.",
         technologies: [
           "Frappe",
           "NestJS",
@@ -185,6 +245,7 @@ export const DATA = {
           "Amazon S3",
           "Gemini AI",
           "DrizzleORM",
+          "PostgreSQL",
         ],
         links: [],
         image: "https://picsum.photos/seed/silid/800/400",
@@ -195,7 +256,7 @@ export const DATA = {
         dates: "2024",
         active: true,
         description:
-          "Flexible peer-to-peer tutoring marketplace where educators list specialized courses and students request targeted learning sessions.",
+          "Peer-to-peer tutoring marketplace where educators list specialized courses and students request targeted sessions. Supports multi-student scheduled sessions with tutor, payment, and incentives features.",
         technologies: [
           "Next.js",
           "TailwindCSS",
@@ -220,7 +281,7 @@ export const DATA = {
         dates: "2024",
         active: true,
         description:
-          "Specialized automation tool built for the Frappe framework, designed to streamline academic resource management through an intelligent auto-scheduling engine.",
+          "Frappe automation tool with a Vue 3 frontend. Intelligent auto-scheduling engine that generates class timetables, optimizing faculty availability and room utilization.",
         technologies: ["Vue 3", "Frappe V15"],
         links: [],
         image: "https://picsum.photos/seed/scheduler/800/400",
@@ -229,11 +290,11 @@ export const DATA = {
     personal: [
       {
         title: "Ylern",
-        href: "ylern.vercel.app",
+        href: "https://ylern.vercel.app",
         dates: "2026",
         active: true,
         description:
-          "Enterprise-grade AI study companion. Seamlessly syncs with Google Classroom to generate intelligent study guides and automate academic workflows—powered by a custom credit-based system.",
+          "AI-powered study companion. Sync Google Classroom, generate study guides, and ace your courses—powered by credits.",
         technologies: [
           "Next.js",
           "TailwindCSS",
