@@ -1,5 +1,5 @@
 export const DATA = {
-  name: "Hi, I'm Hervey Mapano 👋",
+  name: "Hi, I'm Hervey 👋",
   initials: "HM",
   location: "Cagayan de Oro City, Philippines",
   locationLink:
