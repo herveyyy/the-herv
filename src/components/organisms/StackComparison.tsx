@@ -1,44 +1,76 @@
-import { ComparisonItem } from "../molecules/ComparisonItem";
 import { SectionTitle } from "../atoms/SectionTitle";
 import { BlurFade } from "../atoms/BlurFade";
+import { CheckCircle2, Code2, Cpu, Database, ShieldCheck, Zap } from "lucide-react";
 
 export function StackComparison() {
-  const comparisons = [
-    { feature: "Performance", myStack: "Ultra Fast (Bun/Vite)", traditional: "Slow (Node/Webpack)" },
-    { feature: "Cost Efficiency", myStack: "Low (Serverless/Edge)", traditional: "High (Dedicated Server)" },
-    { feature: "Development Speed", myStack: "Rapid (Drizzle/Next.js)", traditional: "Slow (Legacy PHP/WP)" },
-    { feature: "Scalability", myStack: true, traditional: false },
-    { feature: "Type Safety", myStack: "100% (TypeScript)", traditional: "None (JS/PHP)" },
-    { feature: "Modern AI Ready", myStack: true, traditional: false },
+  const standards = [
+    {
+      icon: Code2,
+      title: "End-to-End Type Safety",
+      detail: "100% TypeScript & Zod schema validation across client, server actions, REST APIs, and Drizzle database models.",
+    },
+    {
+      icon: Cpu,
+      title: "Custom MCP & Agent Workflows",
+      detail: "Custom Model Context Protocol (MCP) servers bridging ERPNext, Google Workspace, and Discord APIs directly to LLM tool bindings.",
+    },
+    {
+      icon: Database,
+      title: "Sub-Second Query Performance",
+      detail: "Drizzle ORM schema indexing over PostgreSQL & MySQL engines, ensuring zero N+1 query overhead under heavy concurrency.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Role-Gated RAG Security",
+      detail: "Permissions-aware Retrieval-Augmented Generation restricting vector retrieval strictly to authenticated user privilege levels.",
+    },
+    {
+      icon: Zap,
+      title: "Institutional LMS & ERP Architecture",
+      detail: "Dual-backend microservices combining NestJS & Frappe v15 for complex academic scheduling, grading, and multi-tenancy.",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Token Economics & Quotas",
+      detail: "Real-time AI token monitoring ('Silid Fleet') tracking storage quotas and token utilization across enterprise accounts.",
+    },
   ];
 
   return (
-    <section id="comparison" className="space-y-8">
-      <SectionTitle subtitle="Why choosing the right stack matters for your business.">
-        Stack Comparison
+    <section id="comparison" className="space-y-8 py-8">
+      <SectionTitle subtitle="Production benchmarks and software engineering standards applied across all enterprise systems.">
+        Engineering Standards & Capabilities
       </SectionTitle>
       
-      <div className="bg-foreground/5 rounded-2xl border border-foreground/10 overflow-hidden">
-        <div className="grid grid-cols-3 py-4 bg-foreground/10 border-b border-foreground/10 text-center font-bold text-xs uppercase tracking-widest">
-          <span>Feature</span>
-          <span className="text-foreground">My Modern Stack</span>
-          <span className="text-zinc-500">Other Stacks</span>
-        </div>
-        <div className="px-6 pb-6">
-          {comparisons.map((item, idx) => (
-            <ComparisonItem 
-              key={item.feature}
-              feature={item.feature}
-              myStack={item.myStack}
-              traditional={item.traditional}
-              delay={idx * 0.05}
-            />
-          ))}
-        </div>
-        <BlurFade delay={0.4} className="p-6 bg-foreground/5 text-center italic text-xs text-zinc-500">
-          "I prioritize efficiency and scalability, ensuring your startup doesn't outgrow its technology within months."
-        </BlurFade>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {standards.map((item, idx) => {
+          const Icon = item.icon;
+          return (
+            <BlurFade key={item.title} delay={idx * 0.05}>
+              <div className="p-6 rounded-2xl bg-foreground/5 border border-foreground/10 hover:border-foreground/25 hover:bg-foreground/[0.07] transition-all space-y-3 h-full flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-foreground font-bold text-base">
+                    <Icon size={18} className="text-emerald-500 shrink-0" />
+                    <span>{item.title}</span>
+                  </div>
+                  <p className="text-xs text-zinc-500 leading-relaxed">
+                    {item.detail}
+                  </p>
+                </div>
+                <div className="pt-2">
+                  <span className="inline-block text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                    Production Standard
+                  </span>
+                </div>
+              </div>
+            </BlurFade>
+          );
+        })}
       </div>
+
+      <BlurFade delay={0.3} className="p-6 rounded-2xl bg-foreground/5 border border-foreground/10 text-center italic text-xs sm:text-sm text-zinc-500">
+        "I prioritize clean architecture, strict data integrity, and modular codebases to build software systems that scale seamlessly with organizational demands."
+      </BlurFade>
     </section>
   );
 }

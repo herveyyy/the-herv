@@ -1,94 +1,109 @@
 export const DATA = {
-  name: "Hi I'm Hervey 👋",
-  initials: "HG",
+  name: "Hi, I'm Hervey Mapano 👋",
+  initials: "HM",
   location: "Cagayan de Oro City, Philippines",
   locationLink:
     "https://www.google.com/maps/place/Cagayan+de+Oro,+Misamis+Oriental,+Philippines",
-  description: "Full Stack Developer — LMS, SMS & AI-integrated systems.",
+  description:
+    "Full Stack Developer & AI Systems Engineer — Enterprise LMS, SMS, ERP & Autonomous Workflows",
   summary:
-    "Innovative Full Stack Developer with 4+ years of software engineering experience and 2+ years of professional experience, specializing in architecting enterprise-grade LMS and SMS solutions. Expert in building AI-integrated systems using Next.js, NestJS, and Frappe, with a focus on RAG-based implementations and custom integration tools.",
+    "Innovative Full Stack Developer with 4+ years of software engineering experience and 2+ years of professional experience architecting enterprise-grade LMS, SMS, ERP, and AI-integrated systems. Specialized in developing high-throughput web architectures using Next.js, NestJS, Vue 3, and Frappe Framework, with deep expertise in Retrieval-Augmented Generation (RAG), custom Model Context Protocol (MCP) servers, and autonomous agentic workflows. Proven track record in automating operational bottlenecks, optimizing token economics, and delivering scalable software systems.",
   avatarUrl: "https://github.com/herveyyy.png",
   skills: [
-    "React",
-    "Next.js",
-    "Vite",
-    "NestJS",
-    "Vue 3",
-    "Node.js",
-    "Bun",
     "TypeScript",
-    "JavaScript",
-    "Java",
-    "TailwindCSS",
-    "Frappe v15",
+    "JavaScript (ES6+)",
+    "Node.js",
+    "Bun.js",
+    "Python",
+    "Java (OOP)",
+    "Next.js (App Router/SSR)",
+    "React.js (Vite)",
+    "Vue 3",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "NestJS",
+    "Frappe Framework v15",
     "ERPNext",
+    "RESTful APIs",
+    "Auth.js / NextAuth",
+    "Zod",
+    "Microservices",
+    "Turborepo",
     "Drizzle ORM",
     "PostgreSQL",
     "MySQL",
-    "SQLite",
+    "SQLite3",
     "Firebase",
-    "Auth.js",
-    "REST API",
-    "Zod",
-    "Amazon S3",
-    "RAG",
+    "RAG Architecture",
     "OpenAI SDK",
     "Gemini SDK",
     "Claude SDK",
-    "Cursor SDK",
-    "Custom MCPs",
-    "Git",
-    "Figma",
+    "Cursor AI",
+    "Token Economics",
+    "Custom MCP Servers",
+    "PayMongo & Stripe APIs",
+    "Git / GitHub",
+    "Vercel",
+    "Amazon S3",
+    "Figma UI Design",
   ],
   navbar: [
-    { href: "#", icon: "Home", label: "Home" },
+    { href: "#home", icon: "Home", label: "Home" },
     { href: "#mindset", icon: "Brain", label: "Mindset" },
     { href: "#stack", icon: "Cpu", label: "Stack" },
     { href: "#projects", icon: "Folder", label: "Projects" },
-    { href: "#value", icon: "Briefcase", label: "Value" },
+    { href: "#experience", icon: "Briefcase", label: "Experience" },
   ],
   mindset: [
     {
-      title: "Architectural Rigor",
+      title: "Production Data Rigor",
       description:
-        "I don't use templates. I build systems that are clean, fast, and documented.",
+        "Ensuring strict data integrity, type-safe schema modeling, and sub-second database query performance with Drizzle ORM across MySQL and PostgreSQL.",
       icon: "Shield",
     },
     {
-      title: "Scalable Foundation",
+      title: "AI & MCP Native Architecture",
       description:
-        "Start small with serverless costs, but stay ready for 100k+ users.",
+        "Architecting custom Model Context Protocol (MCP) servers and permission-gated RAG pipelines that safely connect LLMs with internal enterprise tools while optimizing token economics.",
       icon: "Zap",
     },
     {
-      title: "Direct Collaboration",
+      title: "High-Concurrency LMS & ERP",
       description:
-        "You work directly with the engineer. No middlemen, just pure logic.",
+        "Designing modular, multi-tenant architectures (NestJS & Frappe Framework v15) capable of handling heavy concurrent activity grading, dynamic scheduling, and role-based permissions.",
       icon: "Users",
     },
   ],
   stackSteps: [
     {
       step: "01",
-      title: "The Interface",
+      title: "Presentation & Web Tier",
       icon: "⚛️",
-      description: "Next.js Architecture",
+      description: "Next.js (App Router) • React 19 • Vue 3",
+      tag: "Client & SSR Layer",
     },
-    { step: "02", title: "The Logic", icon: "⚡", description: "Bun / NestJS" },
+    {
+      step: "02",
+      title: "Services & Microservices",
+      icon: "⚡",
+      description: "NestJS • Frappe v15 • REST APIs • Bun",
+      tag: "Application Core",
+    },
     {
       step: "03",
-      title: "The Data",
+      title: "Data & Autonomous AI Tier",
       icon: "🗄️",
-      description: "PostgreSQL / Drizzle",
+      description: "Postgres/MySQL • Drizzle • Custom MCP & RAG",
+      tag: "Persistence & AI Engine",
     },
   ],
   valueMetrics: [
-    { label: "System Uptime", value: "99.9%" },
-    { label: "Cost Efficiency", value: "Zero-Idle" },
-    { label: "Performance", value: "Lighthouse 100" },
+    { label: "Engineering Practice", value: "4+ Yrs" },
+    { label: "Query Performance", value: "Sub-Second" },
+    { label: "Core Expertise", value: "AI & ERP/LMS" },
   ],
   contact: {
-    email: "mapano.herveygeralph@gmail.com",
+    email: "captainhervey@gmail.com",
     tel: "+639603295633",
     social: {
       GitHub: {
@@ -110,40 +125,40 @@ export const DATA = {
   },
   work: [
     {
-      company: "Livro Systems Inc.",
+      company: "LIVRO SYSTEMS INC.",
       href: "https://livro.systems/",
-      badges: [],
-      location: "Hybrid",
+      badges: ["Full Stack", "AI & MCP", "Enterprise"],
+      location: "Remote / PH",
       title: "Full Stack Developer",
       logoUrl: "",
       start: "Feb 2025",
       end: "Present",
       description:
-        "Architect and maintain high-quality, scalable codebases while delivering complex features and bug fixes. Perform thorough testing to keep systems stable, resolve defects, and optimize production performance. Collaborate with cross-functional teams to turn requirements into solutions, and keep clear technical documentation while adopting modern tools and frameworks.",
+        "Architect and maintain scalable, production-grade codebases across Next.js, NestJS, and Frappe frameworks for enterprise institutional clients. Design and deploy internal AI assistants (Giya AI) and custom Model Context Protocol (MCP) servers to automate developer and operational workflows. Build performant data access layers with Drizzle ORM (MySQL/PostgreSQL), ensuring strict data integrity, type safety, and sub-second queries. Collaborate with cross-functional engineering squads to translate complex specifications into modular features.",
     },
     {
-      company: "Wela School Systems",
+      company: "WELA SCHOOL SYSTEMS",
       href: "https://wela.online",
-      badges: [],
-      location: "Remote",
+      badges: ["R&D", "SMS / LMS", "Frappe / Vue 3"],
+      location: "Cagayan de Oro, PH",
       title: "Web Developer (R&D Department)",
       logoUrl: "",
-      start: "Sept 2024",
+      start: "Sep 2024",
       end: "Feb 2025",
       description:
-        "Wrote well-designed, testable, efficient code using best practices. Integrated data from back-end services and databases, refined specs from technical needs, maintained documentation, and scaled the platform while applying emerging technologies to operations.",
+        "Engineered core institutional modules for School Management Systems (SMS) and Learning Management Systems (LMS) using Frappe and Vue 3. Integrated data pipelines and RESTful microservices with relational database engines, enhancing data synchronization speed and platform reliability. Gathered technical requirements from educational administrators to design automated grading, scheduling, and attendance systems. Researched and integrated modern web technologies to optimize server response times and reduce technical debt.",
     },
     {
-      company: "DENR Region-X",
+      company: "DENR REGION-X",
       href: "#",
-      badges: [],
-      location: "Cagayan de Oro",
-      title: "On The Job Trainee — IT Technician & Web Developer",
+      badges: ["IT Infrastructure", "Web Systems"],
+      location: "Cagayan de Oro, PH",
+      title: "IT Technician & Web Development Trainee",
       logoUrl: "",
       start: "Feb 2024",
-      end: "June 2024",
+      end: "Jun 2024",
       description:
-        "Hands-on experience as an IT technician, network analyst, and web developer—troubleshooting IT issues, analyzing network performance, and contributing to web-based solutions across diverse technical domains.",
+        "Contributed to full-stack development of internal web applications, optimizing regional reporting workflows and record management. Diagnosed and resolved enterprise hardware, network infrastructure, and database connectivity issues across regional offices.",
     },
   ],
   education: [
@@ -153,10 +168,10 @@ export const DATA = {
       degree: "Bachelor of Science in Information Technology",
       logoUrl: "",
       start: "2020",
-      end: "July 2024",
+      end: "Jul 2024",
       achievements: [
-        "Excellence in Research Award",
-        "Presented capstone research at the Assessment Summit hosted by Northern Bukidnon State College",
+        "Recipient of the Excellence in Research Award",
+        "Keynote Capstone Presenter at the Regional Assessment Summit (NBSC)",
       ],
     },
   ],
@@ -177,7 +192,7 @@ export const DATA = {
       href: "https://www.freecodecamp.org/certification/herbitok/python-v9",
     },
     {
-      title: "JavaScript Algorithms and Data Structures (v9)",
+      title: "JavaScript Algorithms & Data Structures (v9)",
       issuer: "freeCodeCamp",
       href: "https://www.freecodecamp.org/certification/herbitok/javascript-v9",
     },
@@ -187,35 +202,50 @@ export const DATA = {
       href: "https://www.freecodecamp.org/certification/herbitok/responsive-web-design-v9",
     },
     {
-      title: "Virtualbadge.io Credential",
+      title: "Responsive Web Design (Portfolio Credential)",
+      issuer: "freeCodeCamp",
+      href: "https://www.freecodecamp.org/certification/herveyyy/responsive-web-design",
+    },
+    {
+      title: "Verified Professional Credential",
       issuer: "Virtualbadge.io",
       href: "https://www.virtualbadge.io/certificate-validator?credential=2d1fe79c-6113-4b2c-8478-e685a9481806",
     },
+  ],
+  references: [
     {
-      title: "Responsive Web Design",
-      issuer: "freeCodeCamp",
-      href: "https://www.freecodecamp.org/certification/herveyyy/responsive-web-design",
+      name: "Dr. Rosemarie Suniel",
+      title: "Director, University Libraries & Instructional Media Center",
+      organization: "Liceo de Cagayan University",
+      email: "rgsuniel@liceo.edu.ph",
+    },
+    {
+      name: "Ronel B. Bernardanez",
+      title: "Chief of Regional ICT Unit, Information System Analyst III",
+      organization: "DENR Region 10",
+      email: "bbernardez@denr.gov.ph",
+      phone: "(+63) 977-850-0179",
     },
   ],
   projects: {
     work: [
       {
-        title: "Giya AI",
-        href: "#",
+        title: "Giya AI & Custom ERPNext MCP Server",
+        href: "https://staging-giya-ai.wela.dev/",
         dates: "2025",
         active: true,
         description:
-          "Livro's internal assistant for tasks, bugs, and school setups—scoped to data your account already has access to. Features RAG, chatbox, chat history, and admin controls.",
+          "Solo-architected Livro's enterprise assistant using role-gated RAG restricted strictly to user permission levels for onboarding, task execution, and bug triage. Built custom ERPNext MCP server exposing Frappe APIs to LLMs, integrating Discord and Google MCPs to automate development operations.",
         technologies: [
           "Next.js",
-          "TailwindCSS",
+          "Tailwind CSS",
           "Drizzle ORM",
           "MySQL",
           "Auth.js",
-          "Manual RAG",
-          "OpenAI",
-          "Gemini",
-          "Cursor SDK",
+          "Custom MCP",
+          "Frappe APIs",
+          "OpenAI SDK",
+          "Gemini SDK",
         ],
         links: [
           {
@@ -227,50 +257,45 @@ export const DATA = {
         image: "https://picsum.photos/seed/giya/800/400",
       },
       {
-        title: "ERPNext MCP Server",
-        href: "#",
-        dates: "2025",
-        active: true,
-        description:
-          "Livro's internal MCP for Giya AI and developer experience—bridging Frappe/ERPNext APIs into the Model Context Protocol.",
-        technologies: ["Node.js", "TypeScript", "MCP", "Frappe APIs"],
-        links: [],
-        image: "https://picsum.photos/seed/erpmcp/800/400",
-      },
-      {
-        title: "Silidv3 LMS",
-        href: "#",
+        title: "Silid v3 LMS",
+        href: "https://huawei-silid.wela.dev/silid-lms",
         dates: "2024",
         active: true,
         description:
-          "AI-integrated LMS on a Frappe and NestJS dual-backend. AI Student Hub for note summarization and conversational English practice, plus teacher tools for lesson planning and quiz generation. Includes Silid Fleet for school-wide AI token and storage monitoring.",
+          "Architected dual-backend LMS featuring an AI Student Hub (note summarization, conversational English) and automated teacher quiz generation. Developed high-concurrency activity grading, superadmin controls, and the 'Silid Fleet' console for real-time monitoring of school-wide AI token usage and storage quotas.",
         technologies: [
-          "Frappe",
+          "Frappe ERP",
+          "Vue 3",
           "NestJS",
-          "Vue3",
-          "TailwindCSS",
-          "Amazon S3",
-          "Gemini AI",
-          "DrizzleORM",
+          "Tailwind CSS",
+          "Drizzle ORM",
           "PostgreSQL",
+          "Gemini AI SDK",
+          "Amazon S3",
         ],
-        links: [],
+        links: [
+          {
+            type: "Website",
+            href: "https://huawei-silid.wela.dev/silid-lms",
+            icon: "Globe",
+          },
+        ],
         image: "https://picsum.photos/seed/silid/800/400",
       },
       {
-        title: "Skillings",
+        title: "Skillings Marketplace",
         href: "https://skillings.io",
         dates: "2024",
         active: true,
         description:
-          "Peer-to-peer tutoring marketplace where educators list specialized courses and students request targeted sessions. Supports multi-student scheduled sessions with tutor, payment, and incentives features.",
+          "Engineered peer-to-peer tutoring marketplace course catalog, dynamic tutor scheduling, multi-student collaborative sessions, automated educator incentive calculation algorithms, and 50% of administrative infrastructure.",
         technologies: [
           "Next.js",
-          "TailwindCSS",
-          "DrizzleORM",
+          "Tailwind CSS",
+          "Drizzle ORM",
           "PostgreSQL",
-          "Paymongo",
-          "Stripe",
+          "PayMongo API",
+          "Stripe API",
           "Amazon S3",
         ],
         links: [
@@ -283,32 +308,15 @@ export const DATA = {
         image: "https://picsum.photos/seed/skillings/800/400",
       },
       {
-        title: "Class Scheduler",
+        title: "Class Scheduler Engine",
         href: "#",
         dates: "2024",
         active: true,
         description:
-          "Frappe automation tool with a Vue 3 frontend. Intelligent auto-scheduling engine that generates class timetables, optimizing faculty availability and room utilization.",
-        technologies: ["Vue 3", "Frappe V15"],
+          "Specialized automation tool featuring an intelligent auto-scheduling constraint-satisfaction engine that dynamically generates conflict-free class timetables, optimizing faculty room availability and room utilization.",
+        technologies: ["Vue 3", "Frappe Framework v15", "ERPNext", "Python"],
         links: [],
         image: "https://picsum.photos/seed/scheduler/800/400",
-      },
-      {
-        title: "Giya Extension",
-        href: "https://github.com/herveyyy/qa-helper",
-        dates: "2026",
-        active: true,
-        description:
-          "Chrome extension (Giya QA helper) for pinning UI feedback to Livro Sprint Backlogs on allowed QA sites. Connects to ERP, creates SPBs, and restores page pins across reloads.",
-        technologies: ["TypeScript", "Bun", "Chrome Extension", "Manifest V3"],
-        links: [
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/qa-helper",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/giyaext/800/400",
       },
       {
         title: "Silid LMS Manager",
@@ -316,14 +324,14 @@ export const DATA = {
         dates: "2026",
         active: true,
         description:
-          "Admin dashboard for Silid LMS schools—campus/section/class tenancy, storage, and Silid-AI tooling with secure staff access.",
+          "Admin dashboard for Silid LMS schools—campus/section/class tenancy, storage quotas, and Silid-AI tooling with secure staff access controls.",
         technologies: [
           "Next.js",
           "Drizzle ORM",
           "MySQL",
           "PostgreSQL",
           "NextAuth",
-          "TailwindCSS",
+          "Tailwind CSS",
         ],
         links: [
           {
@@ -340,122 +348,87 @@ export const DATA = {
         image: "https://picsum.photos/seed/silidmgr/800/400",
       },
       {
-        title: "Silid Quickies",
-        href: "https://github.com/herveyyy/Qwicha-extension-app",
-        dates: "2025",
-        active: true,
-        description:
-          "Chrome side-panel student portal for Silid LMS—quick class cards, activities, cookie-based auth, and one-click redirects into the full LMS.",
-        technologies: [
-          "React",
-          "TypeScript",
-          "Vite",
-          "TailwindCSS",
-          "Chrome Extension",
-        ],
-        links: [
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/Qwicha-extension-app",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/quickies/800/400",
-      },
-      {
-        title: "IMSCC Quiz Parser",
-        href: "https://imscc-quiz-parser.vercel.app",
-        dates: "2025",
-        active: true,
-        description:
-          "Upload an `.imscc` package and parse all quizzes into structured JSON for LMS import workflows.",
-        technologies: ["Node.js", "Express", "xml2js", "Vercel"],
-        links: [
-          {
-            type: "Website",
-            href: "https://imscc-quiz-parser.vercel.app",
-            icon: "Globe",
-          },
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/IMSCC-QUIZ-PARSER",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/imscc/800/400",
-      },
-      {
-        title: "Quiz Maker Extension",
-        href: "https://github.com/herveyyy/quiz-maker-extension-app",
-        dates: "2025",
-        active: true,
-        description:
-          "Browser extension for building quizzes quickly—React + TypeScript + Vite with React Compiler.",
-        technologies: ["React", "TypeScript", "Vite", "Chrome Extension"],
-        links: [
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/quiz-maker-extension-app",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/quizmaker/800/400",
-      },
-      {
-        title: "Google Meet Addon",
-        href: "https://project-addon-google-meet.vercel.app",
-        dates: "2025",
-        active: true,
-        description:
-          "Google Meet add-on project for classroom/meeting workflows, built with Next.js.",
-        technologies: ["Next.js", "TypeScript", "TailwindCSS"],
-        links: [
-          {
-            type: "Website",
-            href: "https://project-addon-google-meet.vercel.app",
-            icon: "Globe",
-          },
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/project-addon-google-meet",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/gmeet/800/400",
-      },
-      {
-        title: "RND Next.js Template",
-        href: "https://github.com/wela-herveyyy/RND-NEXT-JS-TEMPLETE",
+        title: "Giya Extension (QA Helper)",
+        href: "https://github.com/herveyyy/qa-helper",
         dates: "2026",
         active: true,
         description:
-          "Next.js 16 R&D template with domain-driven use cases, inline AAA in server actions, Drizzle + MySQL, Better Auth, and installable PWA demos.",
-        technologies: [
-          "Next.js",
-          "React 19",
-          "Drizzle ORM",
-          "MySQL",
-          "Better Auth",
-          "PWA",
-        ],
+          "Chrome extension for pinning UI feedback to Livro Sprint Backlogs on QA sites. Connects to ERP APIs, creates SPBs, and restores page pins dynamically.",
+        technologies: ["TypeScript", "Bun", "Chrome Extension", "Manifest V3"],
         links: [
           {
             type: "Source",
-            href: "https://github.com/wela-herveyyy/RND-NEXT-JS-TEMPLETE",
+            href: "https://github.com/herveyyy/qa-helper",
             icon: "Github",
           },
         ],
-        image: "https://picsum.photos/seed/bbai/800/400",
+        image: "https://picsum.photos/seed/giyaext/800/400",
+      },
+      {
+        title: "ERPNext MCP Server",
+        href: "#",
+        dates: "2025",
+        active: true,
+        description:
+          "Internal MCP server bridging Frappe & ERPNext RESTful APIs directly into the Model Context Protocol for automated developer & ops workflows.",
+        technologies: ["Node.js", "TypeScript", "MCP", "Frappe APIs"],
+        links: [],
+        image: "https://picsum.photos/seed/erpmcp/800/400",
       },
     ],
     personal: [
       {
-        title: "Dalia ERP",
+        title: "Junel Architecture",
+        href: "https://rnd-junel.wela.dev",
+        dates: "2025",
+        active: true,
+        description:
+          "Engineered a scalable full-stack web application with responsive UI, modular API structure, type-safe data pipelines, and optimized server-side rendering.",
+        technologies: [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "PostgreSQL",
+          "Vercel",
+        ],
+        links: [
+          {
+            type: "Website",
+            href: "https://rnd-junel.wela.dev",
+            icon: "Globe",
+          },
+        ],
+        image: "https://picsum.photos/seed/junel/800/400",
+      },
+      {
+        title: "Herv.Web Consultancy",
+        href: "https://herv-web.vercel.app",
+        dates: "2024",
+        active: true,
+        description:
+          "Specialized engineering consultancy helping founders transition from basic websites to fully automated, scalable web systems with minimal operational overhead.",
+        technologies: [
+          "Next.js",
+          "Tailwind CSS",
+          "Serverless",
+          "PostgreSQL",
+        ],
+        links: [
+          {
+            type: "Website",
+            href: "https://herv-web.vercel.app",
+            icon: "Globe",
+          },
+        ],
+        image: "https://picsum.photos/seed/hervweb/800/400",
+      },
+      {
+        title: "Dalia ERP System",
         href: "https://dalia-docs.vercel.app",
         dates: "2026",
         active: true,
         description:
-          "ERP operating system for accounting firms—multi-workspace hub, Philippines HRIS & statutory payroll (SSS, PhilHealth, BIR), with finance and ops modules on a Turborepo multi-zone Next.js stack.",
+          "Enterprise ERP web application platform for accounting firms—multi-workspace hub, Philippines HRIS & statutory payroll (SSS, PhilHealth, BIR), on a Turborepo multi-zone Next.js stack.",
         technologies: [
           "Next.js",
           "Turborepo",
@@ -484,16 +457,14 @@ export const DATA = {
         dates: "2026",
         active: true,
         description:
-          "AI-powered study companion. Sync Google Classroom, generate study guides, and ace your courses—powered by credits.",
+          "AI study assistant syncing Google Classroom to generate automated study guides and quizzes via a credit system.",
         technologies: [
           "Next.js",
-          "TailwindCSS",
-          "DrizzleORM",
+          "Tailwind CSS",
+          "Drizzle ORM",
           "PostgreSQL",
-          "Paymongo",
-          "Stripe",
-          "Amazon S3",
-          "Gemini AI",
+          "Google Classroom API",
+          "Gemini AI SDK",
         ],
         links: [
           {
@@ -502,63 +473,16 @@ export const DATA = {
             icon: "Globe",
           },
         ],
-        image:
-          "C:/Users/hmapa/.gemini/antigravity/brain/1250a71d-7474-43e6-a6c9-44741fcf9473/ylern_ui_mockup_1778763344331.png",
+        image: "https://picsum.photos/seed/ylern/800/400",
       },
       {
-        title: "Sync GClass",
-        href: "https://sync-gclass.vercel.app",
-        dates: "2026",
-        active: true,
-        description:
-          "Google Classroom sync app—Next.js + Classroom API with Drizzle/Neon persistence and NextAuth.",
-        technologies: [
-          "Next.js",
-          "Google Classroom API",
-          "Drizzle ORM",
-          "Neon",
-          "NextAuth",
-          "TailwindCSS",
-        ],
-        links: [
-          {
-            type: "Website",
-            href: "https://sync-gclass.vercel.app",
-            icon: "Globe",
-          },
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/Sync-Gclass",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/syncgclass/800/400",
-      },
-      {
-        title: "Outreach Skill",
-        href: "https://github.com/herveyyy/outreach-skill",
-        dates: "2026",
-        active: true,
-        description:
-          "CLI skill to profile prospects, pull Stitch designs, and draft outreach proposal emails.",
-        technologies: ["Node.js", "CLI", "Stitch"],
-        links: [
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/outreach-skill",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/outreach/800/400",
-      },
-      {
-        title: "Emanuscript",
+        title: "eManuscript Archival Platform",
         href: "https://userapp-caps.vercel.app/",
         dates: "2024",
         active: true,
         description:
-          "Digital Archival Platform designed to automate the storage, management, and borrowing of unpublished manuscripts at Liceo de Cagayan University Library.",
-        technologies: [],
+          "Digital archival and borrowing platform for unpublished student manuscripts at Liceo de Cagayan University Library.",
+        technologies: ["Next.js", "Tailwind CSS", "Drizzle ORM", "PostgreSQL"],
         links: [
           {
             type: "Student App",
@@ -570,39 +494,23 @@ export const DATA = {
             href: "https://liceo-manuscript-system.vercel.app/",
             icon: "Globe",
           },
-          {
-            type: "Documentation",
-            href: "https://rb.gy/vwx7pt",
-            icon: "FileText",
-          },
         ],
         image: "https://picsum.photos/seed/emanuscript/800/400",
       },
       {
-        title: "LesGo",
-        href: "https://les-go-vite.vercel.app/",
-        dates: "2024",
-        active: true,
-        description:
-          "Digital Queuing System for USTP Cagayan de Oro's Registrar's Office to automate request management and document processing.",
-        technologies: [],
-        links: [
-          {
-            type: "Website",
-            href: "https://les-go-vite.vercel.app/",
-            icon: "Globe",
-          },
-        ],
-        image: "https://picsum.photos/seed/lesgo/800/400",
-      },
-      {
-        title: "Meridrops",
+        title: "Meridrops & Drops Local Portals",
         href: "https://meridrops.vercel.app/",
         dates: "2023",
         active: true,
         description:
-          "Custom, locally-hosted web application developed to streamline commercial print shop operations via an offline Wi-Fi portal.",
-        technologies: ["Next.js", "TailwindCSS", "DrizzleORM", "PostgreSQL"],
+          "Localized offline Wi-Fi portal for commercial print shops enabling zero-internet high-speed file uploads and digital catalog browsing, eliminating physical USB risks.",
+        technologies: [
+          "Next.js",
+          "Tailwind CSS",
+          "Drizzle ORM",
+          "PostgreSQL",
+          "Local Node.js Network",
+        ],
         links: [
           {
             type: "Website",
@@ -618,30 +526,13 @@ export const DATA = {
         image: "https://picsum.photos/seed/meridrops/800/400",
       },
       {
-        title: "Drops",
-        href: "https://github.com/herveyyy/Drops",
-        dates: "2023",
-        active: true,
-        description:
-          "Same idea of Meridrops but for everyone. A high-speed local file sharing solution.",
-        technologies: ["Next.js", "TailwindCSS", "DrizzleORM", "PostgreSQL"],
-        links: [
-          {
-            type: "Source",
-            href: "https://github.com/herveyyy/Drops",
-            icon: "Github",
-          },
-        ],
-        image: "https://picsum.photos/seed/drops/800/400",
-      },
-      {
-        title: "Lyn Store",
+        title: "Lyn Store E-Commerce",
         href: "https://lyn-store.vercel.app/",
         dates: "2023",
         active: true,
         description:
-          "Custom e-commerce application developed to digitize and streamline a specialized retail business for collectibles and figures.",
-        technologies: ["Next.js", "TailwindCSS", "DrizzleORM", "PostgreSQL"],
+          "Branded e-commerce web application for collectible figures with streamlined inventory and catalog management.",
+        technologies: ["Next.js", "Tailwind CSS", "Drizzle ORM", "PostgreSQL"],
         links: [
           {
             type: "Website",
@@ -652,24 +543,7 @@ export const DATA = {
         image: "https://picsum.photos/seed/lynstore/800/400",
       },
       {
-        title: "Herv.Web",
-        href: "https://herv-web.vercel.app/",
-        dates: "2024",
-        active: true,
-        description:
-          "Specialized engineering service helping independent founders transition from basic websites to fully automated Web Application Systems.",
-        technologies: ["Next.js", "TailwindCSS", "Serverless", "PostgreSQL"],
-        links: [
-          {
-            type: "Website",
-            href: "https://herv-web.vercel.app/",
-            icon: "Globe",
-          },
-        ],
-        image: "https://picsum.photos/seed/hervweb/800/400",
-      },
-      {
-        title: "Unified Agent Engine",
+        title: "Unified Agent Engine (AI-Slaves)",
         href: "https://github.com/herveyyy/ai-slaves",
         dates: "2024",
         active: true,
@@ -682,78 +556,23 @@ export const DATA = {
             href: "https://github.com/herveyyy/ai-slaves",
             icon: "Github",
           },
-          {
-            type: "Documentation",
-            href: "https://docs.google.com/document/d/1YvMm8zMn_acIRDhWDVKz_74rvmZnfb8OvhRCHYXbUS0/edit?usp=sharing",
-            icon: "FileText",
-          },
         ],
         image: "https://picsum.photos/seed/agent/800/400",
       },
       {
-        title: "Menu System",
-        href: "#",
-        dates: "2023",
-        active: true,
-        description:
-          "Digital menu system for cafes and restaurants to replace traditional menus with a mobile or tablet-based solution.",
-        technologies: [],
-        links: [
-          {
-            type: "Documentation",
-            href: "https://rb.gy/8mfkf2",
-            icon: "FileText",
-          },
-        ],
-        image: "https://picsum.photos/seed/menu/800/400",
-      },
-      {
-        title: "Player Shop System",
-        href: "#",
-        dates: "2023",
-        active: true,
-        description:
-          "Online economy system for Moonlighter where players can set their own prices and interact with others.",
-        technologies: [],
-        links: [
-          {
-            type: "Documentation",
-            href: "https://rb.gy/mjad7k",
-            icon: "FileText",
-          },
-        ],
-        image: "https://picsum.photos/seed/playershop/800/400",
-      },
-      {
-        title: "Sales Monitor & Inventory",
-        href: "#",
-        dates: "2023",
-        active: true,
-        description:
-          "Management system for Cherry Store franchise to improve inventory management and customer transactions.",
-        technologies: [],
-        links: [
-          {
-            type: "Documentation",
-            href: "https://rb.gy/wlhchr",
-            icon: "FileText",
-          },
-        ],
-        image: "https://picsum.photos/seed/inventory/800/400",
-      },
-      {
-        title: "Shadcn-Next-Drizzle-Turborepo",
+        title: "Shadcn-Next-Nest Turborepo",
         href: "https://github.com/herveyyy/shadnextnest-in-turbo",
         dates: "2024",
         active: true,
         description:
-          "High-performance monorepo template designed for rapid full-stack development with Next.js and NestJS.",
+          "High-performance full-stack monorepo boilerplate combining Next.js and NestJS for rapid development.",
         technologies: [
           "Next.js",
           "NestJS",
-          "TailwindCSS",
-          "DrizzleORM",
           "Turborepo",
+          "shadcn/ui",
+          "Tailwind CSS",
+          "Drizzle ORM",
         ],
         links: [
           {
@@ -765,21 +584,21 @@ export const DATA = {
         image: "https://picsum.photos/seed/turbo/800/400",
       },
       {
-        title: "Iamherveyyy Portfolio",
-        href: "https://iamhervey.vercel.app",
+        title: "LesGo Registrar Automation",
+        href: "https://les-go-vite.vercel.app/",
         dates: "2024",
         active: true,
         description:
-          "Personal portfolio application showcasing projects and skills.",
-        technologies: [],
+          "Digital registrar queuing and document request processing automation system for USTP Cagayan de Oro.",
+        technologies: ["React", "Vite", "REST APIs"],
         links: [
           {
             type: "Website",
-            href: "https://iamhervey.vercel.app",
+            href: "https://les-go-vite.vercel.app/",
             icon: "Globe",
           },
         ],
-        image: "https://picsum.photos/seed/portfolio/800/400",
+        image: "https://picsum.photos/seed/lesgo/800/400",
       },
     ],
   },

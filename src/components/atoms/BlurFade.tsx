@@ -17,21 +17,24 @@ export function BlurFade({
   children,
   className,
   variant,
-  duration = 0.4,
+  duration = 0.35,
   delay = 0,
-  yOffset = 6,
+  yOffset = 8,
   inView = false,
   inViewMargin = "-50px",
-  blur = "6px",
+  blur = "4px",
 }: BlurFadeProps) {
   const ref = useRef(null);
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin as any });
   const isInView = !inView || inViewResult;
+  
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
+    visible: { y: 0, opacity: 1, filter: `blur(0px)` },
   };
+
   const combinedVariants = variant || defaultVariants;
+
   return (
     <motion.div
       ref={ref}
@@ -39,9 +42,9 @@ export function BlurFade({
       animate={isInView ? "visible" : "hidden"}
       exit="hidden"
       transition={{
-        delay: 0.04 + delay,
+        delay: 0.02 + delay,
         duration,
-        ease: "easeOut",
+        ease: [0.21, 0.47, 0.32, 0.98],
       }}
       variants={combinedVariants}
       className={className}

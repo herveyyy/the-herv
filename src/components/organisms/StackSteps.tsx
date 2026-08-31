@@ -2,65 +2,60 @@ import { DATA } from "../../constants";
 import { BlurFade } from "../atoms/BlurFade";
 import { SectionTitle } from "../atoms/SectionTitle";
 import { motion } from "motion/react";
-import { ChevronRight } from "lucide-react";
+import { Layers, Server, Database } from "lucide-react";
 
 export function StackSteps() {
   return (
-    <section id="stack" className="space-y-16 py-12">
+    <section id="stack" className="space-y-12 py-8">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-        <SectionTitle subtitle="Every system I build follows a rigid three-tier architecture to ensure maximum reliability and speed.">
-          The System Blueprint
+        <SectionTitle subtitle="Decoupled 3-tier system architecture designed for clean separation of concerns, high throughput, and seamless MCP AI integration.">
+          Enterprise System Architecture
         </SectionTitle>
         <BlurFade delay={0.2}>
-          <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-xs font-mono text-zinc-500">
-            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-            Optimized for Production
+          <div className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-foreground/10 bg-foreground/5 text-xs font-mono text-zinc-500">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            Production Architecture
           </div>
         </BlurFade>
       </div>
       
-      <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {/* Connecting lines for desktop */}
-        <div className="hidden sm:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent -translate-y-1/2 -z-10" />
-
+      <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-6">
         {DATA.stackSteps.map((item: any, idx: number) => (
-          <BlurFade key={item.step} delay={idx * 0.2} yOffset={20}>
+          <BlurFade key={item.step} delay={idx * 0.15} yOffset={20}>
             <motion.div 
-              whileHover={{ y: -5 }}
-              className="relative group flex flex-col items-center"
+              whileHover={{ y: -4 }}
+              className="relative group flex flex-col h-full p-8 rounded-3xl bg-foreground/5 border border-foreground/10 hover:border-foreground/25 hover:bg-foreground/[0.07] transition-all duration-300 space-y-6"
             >
-              {/* Step indicator */}
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-3 py-1 bg-background border border-foreground/10 rounded-full text-[10px] font-bold tracking-widest text-zinc-400 group-hover:text-foreground group-hover:border-foreground/30 transition-colors z-10">
-                STEP {item.step}
+              {/* Step Badge */}
+              <div className="flex items-center justify-between">
+                <span className="px-3 py-1 bg-background border border-foreground/10 rounded-full text-[10px] font-bold tracking-widest font-mono text-zinc-400 group-hover:text-foreground transition-colors">
+                  LAYER {item.step}
+                </span>
+                <span className="text-[10px] font-mono text-zinc-500 uppercase font-semibold">
+                  {item.tag || "Production Core"}
+                </span>
               </div>
 
-              <div className="w-full relative p-10 rounded-[2.5rem] bg-foreground/5 border border-foreground/10 flex flex-col items-center text-center space-y-6 group-hover:bg-foreground/[0.08] group-hover:border-foreground/20 transition-all duration-500">
-                {/* Icon with orbital effect */}
-                <div className="relative">
-                  <motion.div 
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute -inset-4 border border-dashed border-foreground/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                  />
-                  <div className="text-6xl group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl">
-                    {item.icon}
-                  </div>
-                </div>
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-2xl bg-foreground/10 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">
+                {idx === 0 && <Layers size={28} className="text-blue-500" />}
+                {idx === 1 && <Server size={28} className="text-amber-500" />}
+                {idx === 2 && <Database size={28} className="text-emerald-500" />}
+              </div>
 
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
-                  <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest flex items-center justify-center gap-2">
-                    {item.description}
-                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                  </p>
-                </div>
+              {/* Title & Tech Description */}
+              <div className="space-y-2 flex-1">
+                <h3 className="text-xl font-bold tracking-tight">{item.title}</h3>
+                <p className="text-xs sm:text-sm font-medium text-zinc-500 leading-relaxed font-mono">
+                  {item.description}
+                </p>
+              </div>
 
-                {/* Technical badge */}
-                <div className="pt-4 flex flex-wrap justify-center gap-2">
-                  <span className="px-2 py-1 rounded bg-foreground/5 text-[10px] font-mono text-zinc-400">
-                    LATENCY: &lt;50ms
-                  </span>
-                </div>
+              {/* Architectural Highlights */}
+              <div className="pt-3 border-t border-foreground/10">
+                <span className="text-[11px] font-bold text-foreground/80 flex items-center gap-1.5">
+                  ✓ High-Performance & Type-Safe
+                </span>
               </div>
             </motion.div>
           </BlurFade>

@@ -1,82 +1,133 @@
+import { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, MapPin, ChevronRight, FileCode } from "lucide-react";
+import { Mail, MapPin, ChevronRight, FileCode, Check, Sparkles, Terminal, ArrowUpRight } from "lucide-react";
 import { DATA } from "../../constants";
 import { BlurFade } from "../atoms/BlurFade";
 
-const BLUR_FADE_DELAY = 0.04;
+const BLUR_FADE_DELAY = 0.03;
 
 export function Hero() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(DATA.contact.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
   return (
-    <section id="home" className="space-y-12 py-12">
-      <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-8">
-        <div className="space-y-6 flex-1">
+    <section id="home" className="py-6 sm:py-10 space-y-8">
+      <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-8 sm:gap-12">
+        <div className="space-y-5 flex-1">
+          {/* Availability Status Badge */}
           <BlurFade delay={BLUR_FADE_DELAY}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/5 border border-foreground/10 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              System Status: Operational
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-mono font-semibold text-emerald-600 dark:text-emerald-400">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Available for Full-Stack & AI Systems Roles
             </div>
           </BlurFade>
+
+          {/* Name & Headline */}
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
-            <h1 className="text-5xl sm:text-7xl font-bold tracking-tighter leading-none">
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
               {DATA.name}
             </h1>
           </BlurFade>
+
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
-            <p className="text-xl sm:text-2xl text-zinc-500 max-w-150 text-balance leading-relaxed">
+            <p className="text-lg sm:text-xl font-medium text-foreground/90 leading-relaxed text-balance">
               {DATA.description}
             </p>
           </BlurFade>
+
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <p className="text-zinc-400 max-w-140 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-500 leading-relaxed max-w-xl">
               {DATA.summary}
             </p>
           </BlurFade>
-          
+
+          {/* Contact / Action Row */}
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-foreground/10"
-              >
-                Start Your Project <ChevronRight size={20} />
-              </a>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-foreground/5 border border-foreground/10 font-bold rounded-full hover:bg-foreground/10 transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background font-semibold text-xs sm:text-sm rounded-xl hover:opacity-90 transition-opacity shadow-md"
               >
-                View Case Studies <FileCode size={20} />
+                Browse Projects <ChevronRight size={16} />
               </a>
+
+              <a
+                href="#experience"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-foreground/5 border border-foreground/10 font-semibold text-xs sm:text-sm rounded-xl hover:bg-foreground/10 transition-colors"
+              >
+                Experience <FileCode size={16} />
+              </a>
+
+              <button
+                onClick={handleCopyEmail}
+                className="inline-flex items-center gap-2 px-4 py-3 bg-foreground/5 border border-foreground/10 font-semibold text-xs sm:text-sm rounded-xl hover:bg-foreground/10 transition-colors text-zinc-500 hover:text-foreground"
+                title="Copy Email"
+              >
+                {copied ? (
+                  <>
+                    <Check size={14} className="text-emerald-500" />
+                    <span className="text-emerald-500 font-mono text-xs">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Mail size={14} />
+                    <span className="text-xs">Copy Email</span>
+                  </>
+                )}
+              </button>
             </div>
           </BlurFade>
         </div>
 
+        {/* Avatar Profile */}
         <BlurFade delay={BLUR_FADE_DELAY * 2}>
-          <motion.div
-            whileHover={{ scale: 1.05, rotate: 3 }}
-            className="relative w-32 h-32 sm:w-48 sm:h-48 rounded-[2.5rem] overflow-hidden border-2 border-foreground/10 grayscale hover:grayscale-0 transition-all duration-700 shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(255,255,255,0.1)]"
-          >
-            <img
-              src={DATA.avatarUrl}
-              alt={DATA.name}
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-            {/* Glossy overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-          </motion.div>
+          <div className="relative shrink-0">
+            <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-foreground/15 shadow-xl bg-foreground/5">
+              <img
+                src={DATA.avatarUrl}
+                alt={DATA.name}
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
         </BlurFade>
       </div>
 
+      {/* Highlights Summary Bar */}
       <BlurFade delay={BLUR_FADE_DELAY * 6}>
-        <div className="flex flex-wrap gap-6 border-t border-foreground/5 pt-8">
-          <a
-            href={`mailto:${DATA.contact.email}`}
-            className="flex items-center gap-2 text-sm text-zinc-500 hover:text-foreground transition-colors group"
-          >
-            <Mail size={16} className="group-hover:animate-bounce" /> {DATA.contact.email}
-          </a>
-          <div className="flex items-center gap-2 text-sm text-zinc-500">
-            <MapPin size={16} /> {DATA.location}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-foreground/10 text-xs">
+          <div className="p-3.5 rounded-xl bg-foreground/5 border border-foreground/5 space-y-1">
+            <div className="font-bold text-foreground flex items-center gap-1.5">
+              <Sparkles size={13} className="text-amber-500" /> 4+ Years
+            </div>
+            <p className="text-[11px] text-zinc-500">Software Engineering</p>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-foreground/5 border border-foreground/5 space-y-1">
+            <div className="font-bold text-foreground flex items-center gap-1.5">
+              <Terminal size={13} className="text-blue-500" /> Enterprise
+            </div>
+            <p className="text-[11px] text-zinc-500">LMS, SMS & ERP Systems</p>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-foreground/5 border border-foreground/5 space-y-1">
+            <div className="font-bold text-foreground flex items-center gap-1.5">
+              <Sparkles size={13} className="text-purple-500" /> Custom MCP
+            </div>
+            <p className="text-[11px] text-zinc-500">RAG & Agent Workflows</p>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-foreground/5 border border-foreground/5 space-y-1">
+            <div className="font-bold text-foreground flex items-center gap-1.5">
+              <MapPin size={13} className="text-emerald-500" /> PH / Remote
+            </div>
+            <p className="text-[11px] text-zinc-500">Cagayan de Oro City</p>
           </div>
         </div>
       </BlurFade>
