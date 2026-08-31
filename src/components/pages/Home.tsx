@@ -10,7 +10,7 @@ import { Contact } from "../organisms/Contact";
 
 export function HomePage() {
   return (
-    <div className="space-y-16 sm:space-y-24">
+    <div className="space-y-10 sm:space-y-14">
       <Hero />
       <Experience />
       <ProjectsGrid />
