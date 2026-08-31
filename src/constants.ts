@@ -280,7 +280,7 @@ export const DATA = {
         image: "https://picsum.photos/seed/silid/800/400",
       },
       {
-        title: "Skillings Marketplace",
+        title: "Skillings",
         href: "https://skillings.io",
         dates: "2024",
         active: true,
