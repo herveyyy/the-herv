@@ -90,7 +90,7 @@ export function Chat() {
       }
 
       // 5. Strict System Prompt Enforcement
-      const systemPrompt = `You are the exclusive AI assistant for Hervey Mapano's portfolio.
+      const systemPrompt = `You are the exclusive AI assistant for Hervey's portfolio.
 CRITICAL RULES:
 1. ONLY answer questions based on the provided CONTEXT below. Do NOT use outside knowledge.
 2. If the user asks something outside the CONTEXT, politely decline and state you only answer questions about Hervey.
@@ -144,11 +144,10 @@ User query: ${userMessage}`;
 
   return (
     <div
-      className={`fixed z-50 ${
-        isOpen
+      className={`fixed z-50 ${isOpen
           ? "inset-0 sm:inset-auto sm:right-6 sm:bottom-24"
           : "right-4 bottom-20 sm:right-6 sm:bottom-24"
-      }`}
+        }`}
     >
       <AnimatePresence>
         {isOpen && (
@@ -190,11 +189,10 @@ User query: ${userMessage}`;
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[80%] p-3 rounded-2xl text-sm ${
-                      msg.role === "user"
+                    className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.role === "user"
                         ? "bg-foreground text-background"
                         : "bg-foreground/5 border border-foreground/10 [&_a]:underline [&_code]:rounded [&_code]:bg-foreground/10 [&_code]:px-1 [&_code]:py-0.5 [&_li]:ml-4 [&_ol]:list-decimal [&_ol]:space-y-1 [&_p]:my-0 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:bg-foreground/10 [&_pre]:p-3 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_ul]:list-disc [&_ul]:space-y-1"
-                    }`}
+                      }`}
                   >
                     {msg.role === "model" ? (
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
@@ -241,11 +239,10 @@ User query: ${userMessage}`;
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex h-14 w-14 absolute items-center -z-50  justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 ${
-          isOpen
+        className={`flex h-14 w-14 absolute items-center -z-50  justify-center rounded-full bg-foreground text-background shadow-2xl transition-all hover:scale-110 active:scale-95 ${isOpen
             ? "hidden sm:absolute sm:right-0 sm:bottom-0 sm:flex"
             : "absolute right-0 bottom-0"
-        }`}
+          }`}
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
       </button>

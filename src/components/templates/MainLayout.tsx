@@ -49,10 +49,10 @@ export function MainLayout({ children, isDark, setIsDark }: MainLayoutProps) {
               </p>
               <div className="flex gap-3 pt-1">
                 {Object.entries(DATA.contact.social).map(([name, social]) => {
-                  const Icon = social.icon === "Github" ? Github : 
-                               social.icon === "Linkedin" ? Linkedin : 
-                               social.icon === "Facebook" ? Facebook : 
-                               Github;
+                  const Icon = social.icon === "Github" ? Github :
+                    social.icon === "Linkedin" ? Linkedin :
+                      social.icon === "Facebook" ? Facebook :
+                        Github;
                   return (
                     <a
                       key={name}
@@ -69,7 +69,7 @@ export function MainLayout({ children, isDark, setIsDark }: MainLayoutProps) {
             </div>
           </div>
           <div className="pt-6 border-t border-foreground/5 flex flex-col sm:flex-row justify-between items-center gap-3 text-[10px] uppercase tracking-widest font-bold text-zinc-500">
-            <p>© {new Date().getFullYear()} Hervey Mapano. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Hervey Geralph C. Mapano. All rights reserved.</p>
             <p>Built with Next.js & Architectural Rigor</p>
           </div>
         </footer>
