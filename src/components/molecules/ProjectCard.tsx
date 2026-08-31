@@ -1,4 +1,4 @@
-import { Github, Globe, FileText, ArrowUpRight, Sparkles } from "lucide-react";
+import { Github, Globe, FileText, ArrowUpRight, Star } from "lucide-react";
 import { BlurFade } from "../atoms/BlurFade";
 import { Badge } from "../atoms/Badge";
 
@@ -44,7 +44,7 @@ export function ProjectCard({ project, delay = 0, isFeatured = false }: ProjectC
             </div>
             {isFeatured && (
               <span className="ml-1 inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                <Sparkles size={11} /> Flagship System
+                <Star size={11} /> Featured Build
               </span>
             )}
           </div>

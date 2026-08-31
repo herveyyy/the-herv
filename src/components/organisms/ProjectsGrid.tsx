@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Search, Sparkles, LayoutGrid } from "lucide-react";
+import { Search, Folder, LayoutGrid } from "lucide-react";
 import { DATA } from "../../constants";
 import { ProjectCard } from "../molecules/ProjectCard";
 import { SectionTitle } from "../atoms/SectionTitle";
@@ -12,7 +12,7 @@ function byYearAsc<T extends { dates: string }>(a: T, b: T) {
 
 const FILTER_TAGS = [
   { id: "all", label: "All Projects" },
-  { id: "ai", label: "AI & MCP Servers", keyword: ["AI", "MCP", "RAG", "LLM", "Gemini", "OpenAI", "Agent"] },
+  { id: "ai", label: "AI & MCP Tooling", keyword: ["AI", "MCP", "RAG", "LLM", "Gemini", "OpenAI", "Agent"] },
   { id: "next", label: "Next.js", keyword: ["Next.js"] },
   { id: "frappe", label: "Frappe / Vue 3 / NestJS", keyword: ["Frappe", "Vue 3", "NestJS", "ERPNext"] },
   { id: "orm", label: "Drizzle & Databases", keyword: ["Drizzle", "PostgreSQL", "MySQL", "DrizzleORM", "Drizzle ORM"] },
@@ -60,7 +60,7 @@ export function ProjectsGrid() {
       {/* Header & Title */}
       <div className="space-y-4">
         <SectionTitle subtitle="Enterprise LMS, SMS, ERP, custom Model Context Protocol (MCP) servers, and full-stack web applications.">
-          Project Portfolio Collage
+          Projects & Codebases
         </SectionTitle>
 
         {/* Filter Controls */}
@@ -69,7 +69,7 @@ export function ProjectsGrid() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500">
                 <LayoutGrid size={14} className="text-foreground" />
-                <span>2-Column Collage Filter</span>
+                <span>Filter Projects</span>
               </div>
 
               {/* Search Box */}
@@ -77,7 +77,7 @@ export function ProjectsGrid() {
                 <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" />
                 <input
                   type="text"
-                  placeholder="Filter by technology (e.g. Next.js, RAG)..."
+                  placeholder="Filter by tech or keyword..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-8 pr-4 py-1.5 bg-background border border-foreground/10 rounded-full text-xs placeholder:text-zinc-500 focus:outline-none focus:border-foreground/30 transition-all"
@@ -130,7 +130,7 @@ export function ProjectsGrid() {
       {/* 2-Column Masonry Collage Grid */}
       {filteredProjects.length === 0 ? (
         <div className="text-center py-16 p-8 rounded-3xl bg-foreground/5 border border-foreground/10 space-y-3">
-          <Sparkles className="mx-auto text-zinc-400" size={28} />
+          <Folder className="mx-auto text-zinc-400" size={28} />
           <h3 className="text-base font-bold">No matching projects found</h3>
           <p className="text-xs text-zinc-500">
             Try adjusting your search query or clicking "All Projects" to view the complete list.

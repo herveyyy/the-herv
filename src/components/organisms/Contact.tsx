@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Facebook, Mail, Check, Send, Sparkles } from "lucide-react";
+import { Github, Linkedin, Facebook, Mail, Check, Send } from "lucide-react";
 import { DATA } from "../../constants";
 import { BlurFade } from "../atoms/BlurFade";
 
@@ -16,18 +16,18 @@ export function Contact() {
     <section id="contact" className="py-4">
       <BlurFade yOffset={15}>
         <div className="relative overflow-hidden p-6 sm:p-10 rounded-3xl bg-foreground text-background shadow-xl space-y-6">
-          {/* Decorative background glow */}
+          {/* Background overlay */}
           <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-64 h-64 bg-background/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-2xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background/10 border border-background/15 text-[11px] font-bold uppercase tracking-widest text-background/80">
-              <Sparkles size={13} className="text-amber-300" /> Let's Connect
+              <Mail size={13} /> Get In Touch
             </div>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-balance">
-              Open for Engineering Roles & Core Projects
+              Let's Connect & Build
             </h2>
             <p className="text-background/80 text-xs sm:text-sm leading-relaxed text-balance">
-              Looking for a Full-Stack Developer or AI Systems Engineer to architect high-throughput applications, custom MCP servers, or enterprise LMS/ERP infrastructure? Let's talk.
+              Looking for a Full-Stack Developer or Software Engineer to build enterprise web platforms, custom MCP integrations, or digital tools? Feel free to reach out directly.
             </p>
           </div>
 

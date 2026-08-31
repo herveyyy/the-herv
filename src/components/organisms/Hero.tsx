@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, ChevronRight, FileCode, Check, Sparkles, Terminal } from "lucide-react";
+import { Mail, MapPin, ChevronRight, FileCode, Check, Terminal, Code2, Cpu } from "lucide-react";
 import { DATA } from "../../constants";
 import { BlurFade } from "../atoms/BlurFade";
 
@@ -18,11 +18,11 @@ export function Hero() {
     <section id="home" className="py-2 space-y-6">
       <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-6 sm:gap-8">
         <div className="space-y-4 flex-1">
-          {/* Availability Status Badge */}
+          {/* Authentic Status Badge */}
           <BlurFade delay={BLUR_FADE_DELAY}>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-mono font-semibold text-emerald-600 dark:text-emerald-400">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Available for Full-Stack & AI Systems Roles
+              Software Engineer & Full Stack Developer
             </div>
           </BlurFade>
 
@@ -45,7 +45,7 @@ export function Hero() {
             </p>
           </BlurFade>
 
-          {/* Contact / Action Row */}
+          {/* Action Row */}
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <div className="flex flex-wrap items-center gap-2.5 pt-1">
               <a
@@ -98,28 +98,28 @@ export function Hero() {
         </BlurFade>
       </div>
 
-      {/* Highlights Summary Bar */}
+      {/* Highlights Bar */}
       <BlurFade delay={BLUR_FADE_DELAY * 6}>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-4 border-t border-foreground/10 text-xs">
           <div className="p-3 rounded-xl bg-foreground/5 border border-foreground/5 space-y-0.5">
             <div className="font-bold text-foreground flex items-center gap-1.5 text-xs">
-              <Sparkles size={13} className="text-amber-500" /> 4+ Years
+              <Code2 size={13} className="text-amber-500" /> 4+ Years
             </div>
-            <p className="text-[10px] text-zinc-500">Software Engineering</p>
+            <p className="text-[10px] text-zinc-500">Engineering Experience</p>
           </div>
 
           <div className="p-3 rounded-xl bg-foreground/5 border border-foreground/5 space-y-0.5">
             <div className="font-bold text-foreground flex items-center gap-1.5 text-xs">
               <Terminal size={13} className="text-blue-500" /> Enterprise
             </div>
-            <p className="text-[10px] text-zinc-500">LMS, SMS & ERP Systems</p>
+            <p className="text-[10px] text-zinc-500">LMS, SMS & ERP Stack</p>
           </div>
 
           <div className="p-3 rounded-xl bg-foreground/5 border border-foreground/5 space-y-0.5">
             <div className="font-bold text-foreground flex items-center gap-1.5 text-xs">
-              <Sparkles size={13} className="text-purple-500" /> Custom MCP
+              <Cpu size={13} className="text-purple-500" /> Custom MCP
             </div>
-            <p className="text-[10px] text-zinc-500">RAG & Agent Workflows</p>
+            <p className="text-[10px] text-zinc-500">RAG & Tool Binding</p>
           </div>
 
           <div className="p-3 rounded-xl bg-foreground/5 border border-foreground/5 space-y-0.5">
