@@ -94,7 +94,7 @@ export const DATA = {
       title: "Data & Autonomous AI Tier",
       icon: "🗄️",
       description: "Postgres/MySQL • Drizzle • Custom MCP & RAG",
-      tag: "Persistence & AI Engine",
+      tag: "Data & AI Persistence",
     },
   ],
   valueMetrics: [
@@ -127,17 +127,17 @@ export const DATA = {
     {
       company: "LIVRO SYSTEMS INC.",
       href: "https://livro.systems/",
-      badges: ["Full Stack", "AI & MCP", "Enterprise"],
+      badges: ["Full Stack", "AI & MCP", "Enterprise LMS/SMS"],
       location: "Remote / PH",
       title: "Full Stack Developer",
       logoUrl: "",
       start: "Feb 2025",
       end: "Present",
       description:
-        "Architect and maintain scalable, production-grade codebases across Next.js, NestJS, and Frappe frameworks for enterprise institutional clients. Design and deploy internal AI assistants (Giya AI) and custom Model Context Protocol (MCP) servers to automate developer and operational workflows. Build performant data access layers with Drizzle ORM (MySQL/PostgreSQL), ensuring strict data integrity, type safety, and sub-second queries. Collaborate with cross-functional engineering squads to translate complex specifications into modular features.",
+        "Architect and maintain scalable, production-grade codebases across Next.js, NestJS, and Frappe frameworks for enterprise institutional clients following Wela's strategic merger into Livro Systems Inc. Design and deploy internal AI assistants (Giya AI) and custom Model Context Protocol (MCP) servers to automate developer and operational workflows. Build performant data access layers with Drizzle ORM (MySQL/PostgreSQL), ensuring strict data integrity, type safety, and sub-second queries while continuing R&D for core SMS/LMS platforms.",
     },
     {
-      company: "WELA SCHOOL SYSTEMS",
+      company: "WELA SCHOOL SYSTEMS (Merged into Livro)",
       href: "https://wela.online",
       badges: ["R&D", "SMS / LMS", "Frappe / Vue 3"],
       location: "Cagayan de Oro, PH",
@@ -146,7 +146,7 @@ export const DATA = {
       start: "Sep 2024",
       end: "Feb 2025",
       description:
-        "Engineered core institutional modules for School Management Systems (SMS) and Learning Management Systems (LMS) using Frappe and Vue 3. Integrated data pipelines and RESTful microservices with relational database engines, enhancing data synchronization speed and platform reliability. Gathered technical requirements from educational administrators to design automated grading, scheduling, and attendance systems. Researched and integrated modern web technologies to optimize server response times and reduce technical debt.",
+        "Engineered core institutional modules for School Management Systems (SMS) and Learning Management Systems (LMS) using Frappe and Vue 3 prior to the company merger into Livro Systems Inc. Integrated data pipelines and RESTful microservices with relational database engines, enhancing data synchronization speed and platform reliability. Designed automated grading, scheduling, and attendance systems whose core competencies and codebase were carried over into Livro's flagship suite.",
     },
     {
       company: "DENR REGION-X",

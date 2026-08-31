@@ -60,7 +60,7 @@ export function ProjectsGrid() {
       {/* Header & Title */}
       <div className="space-y-4">
         <SectionTitle subtitle="Enterprise LMS, SMS, ERP, custom Model Context Protocol (MCP) servers, and full-stack web applications.">
-          Key Projects & Software Systems
+          Project Portfolio Collage
         </SectionTitle>
 
         {/* Filter Controls */}
@@ -69,7 +69,7 @@ export function ProjectsGrid() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500">
                 <LayoutGrid size={14} className="text-foreground" />
-                <span>Tech Stack Filter</span>
+                <span>2-Column Collage Filter</span>
               </div>
 
               {/* Search Box */}
@@ -127,7 +127,7 @@ export function ProjectsGrid() {
         </BlurFade>
       </div>
 
-      {/* Strict 2 Per Row Grid */}
+      {/* 2-Column Masonry Collage Grid */}
       {filteredProjects.length === 0 ? (
         <div className="text-center py-16 p-8 rounded-3xl bg-foreground/5 border border-foreground/10 space-y-3">
           <Sparkles className="mx-auto text-zinc-400" size={28} />
@@ -146,23 +146,27 @@ export function ProjectsGrid() {
           </button>
         </div>
       ) : (
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="columns-1 md:columns-2 gap-6 space-y-6">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, idx) => (
-              <motion.div
-                key={project.title}
-                layout
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.2 }}
-                className="col-span-1"
-              >
-                <ProjectCard project={project} delay={idx * 0.03} />
-              </motion.div>
-            ))}
+            {filteredProjects.map((project, idx) => {
+              const isFeatured = (selectedCategory === "all" && (idx === 0 || idx === 3));
+
+              return (
+                <motion.div
+                  key={project.title}
+                  layout
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                  className="break-inside-avoid inline-block w-full"
+                >
+                  <ProjectCard project={project} delay={idx * 0.02} isFeatured={isFeatured} />
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
-        </motion.div>
+        </div>
       )}
 
       {/* Footer link */}
